@@ -14,7 +14,7 @@ public class Task4Part6 {
                 System.out.println("year is not high");
             }
         } else {
-            System.out.println("entered not a number");
+            System.out.println("entered Not a number");
         }
     }
 }
