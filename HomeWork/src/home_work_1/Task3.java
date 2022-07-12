@@ -6,9 +6,9 @@ public class Task3 {
         double numberTwo;
         int random;
         double result;
-        // 1. Random integer number from 0 to 10
+        // 1. Random integer number from 1 to 9
         random = (int) (1 + Math.random() * 10);
-        System.out.printf("Random number from 0 to 10  = %d\n", random);
+        System.out.printf("Random number from 1 to 9  = %d\n", random);
         // 2. Find "PI number"
         numberTwo = Math.PI;
         System.out.printf("PI = %f.3\n", numberTwo);
