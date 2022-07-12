@@ -4,9 +4,6 @@ import java.util.Scanner;
 
 //4.4 Перевести байты в килобайты или наоборот
 public class Task4Part4 {
-    public static void main(String[] args) {
-        converting();
-    }
 
     public static void converting() {
         System.out.println("Please, enter integer number");
