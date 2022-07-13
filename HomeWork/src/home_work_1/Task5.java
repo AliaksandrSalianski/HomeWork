@@ -7,7 +7,7 @@ public class Task5 {
 
     public static void sleepIn(boolean weekDay, boolean vacation) {
         if (vacation || !weekDay) {
-            System.out.println("Sleep");
+            System.out.println("<Sleep>");
         } else {
             System.out.println("Wake up!");
         }
