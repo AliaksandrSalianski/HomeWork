@@ -21,5 +21,6 @@ public class Task6Part1 {
                 System.out.println("Добрый день, а вы кто?");
             }
         }
+        scanner.close();
     }
 }
