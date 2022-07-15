@@ -3,12 +3,14 @@ package home_work_1;
 import java.util.Scanner;
 
 public class Task4Part3 {
-    public static void checkDivision() {
+    public static void checkDivisionTwoNumbers() {
         int numberOne;
         int numberTwo;
         System.out.println("Please, enter two integer numbers");
         Scanner scanner = new Scanner(System.in);
-        if (scanner.hasNextInt()) {
+        if (!scanner.hasNextInt()) {//проверяем чтобы вводились int значения
+            System.out.println("Invalid input");
+        } else {
             numberOne = scanner.nextInt();
             System.out.printf("Number one = %d\n", numberOne);
             numberTwo = scanner.nextInt();
@@ -31,8 +33,6 @@ public class Task4Part3 {
                 System.out.println("* resultWithoutRounding = " + resultWithoutRounding);
                 System.out.println("* resultWithRounding = " + resultWithRounding);
             }
-        } else {
-            System.out.println("Invalid input");
         }
         scanner.close();
     }
