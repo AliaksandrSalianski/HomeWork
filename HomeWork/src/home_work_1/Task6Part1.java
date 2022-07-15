@@ -13,14 +13,16 @@ public class Task6Part1 {
             String name = scanner.nextLine();
             if (Objects.equals(name, "Вася")) {
                 System.out.println("Привет!");
-            }
-            if (Objects.equals(name, "Анастасия")) {
-                System.out.print("Я тебя так долго ждал");
-            }
-            if (!Objects.equals(name, "Вася") && !Objects.equals(name, "Анастасия")) {
-                System.out.println("Добрый день, а вы кто?");
+            } else {
+                if (Objects.equals(name, "Анастасия")) {
+                    System.out.print("Я тебя так долго ждал");
+                } else {
+                    if (!Objects.equals(name, "Вася") && !Objects.equals(name, "Анастасия")) {
+                        System.out.println("Добрый день, а вы кто?");
+                    }
+                }
+                scanner.close();
             }
         }
-        scanner.close();
     }
 }
