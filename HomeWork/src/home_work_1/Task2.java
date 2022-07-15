@@ -10,7 +10,7 @@ public class Task2 {
          2) 5+0.25 = 5 (отбрасование дробной части т.к int)
         */
         //****** 2.2 ******
-        result = (5 + 2) / 8;
+        System.out.println("5 + 2 / 8  = " + result);
         /*
          1) 5+2 = 7
          2) 7/8 = 0 (отбрасование дробной части т.к int)
@@ -18,6 +18,7 @@ public class Task2 {
         //****** 2.3 ******
         int a = 2;
         result = (5 + a++) / 8;
+        System.out.println("(5 + a++) / 8  = " + result);
         /*
          1)  5+2 = 7
          2)  7/8 = 0 (отбрасование дробной части т.к int)
@@ -28,6 +29,7 @@ public class Task2 {
         a = 2;
         int b = 8;
         result = (5 + a++) / --b;
+        System.out.println("(5 + a++) / --b  = " + result);
         /*
          1)  5+2 = 7
          2)  8-1 = 7
@@ -39,6 +41,7 @@ public class Task2 {
         a = 2;
         b = 8;
         result = (5 * 2 >> a++) / --b;
+        System.out.println("(5 * 2 >> a++) / --b  = " + result);
         /*
          1) 5*2 = 10
          2) 10 >> 2 = 2 равносильно дважды разделить 10 на 2 с отбрасыванием остатка
@@ -49,6 +52,7 @@ public class Task2 {
         a = 2;
         b = 8;
         result = (5 + 7 > 20 ? 68 : 22 * 2 >> a++) / --b;
+        System.out.println("(5 + 7 > 20 ? 68 : 22 * 2 >> a++) / --b  = " + result);
         /*
          1) 5+7>20 == False
          2) т.к. Тернарный опператор - берем операнд из блока False
@@ -68,6 +72,7 @@ public class Task2 {
          */
         //****** 2.8 ******
         boolean sayResult = 6 - 2 > 3 && 12 * 12 <= 119;
+        System.out.println(sayResult);
         /*
          1) 4 > 3
          2) true
@@ -75,8 +80,9 @@ public class Task2 {
          4) true && false
          5) sayResult = false
         */
-        //-----------------  2.9
+        //******2.9 ******
         sayResult = true && false;
+        System.out.println(sayResult);
         // false
     }
 }
