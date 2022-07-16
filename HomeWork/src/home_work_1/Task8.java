@@ -21,10 +21,9 @@ public class Task8 {
         }
         return result;
     }
-   // Для отрицательных чисел обратный код получается из неотрицательного числа в прямом коде, путем
-   // инвертирования всех битов (1 меняем на 0, а 0 меняем на 1).
     private static String makeBinaryIfNegative(byte number) {
         number *= -1;// убираем минус чтобы он не попадал как char в массив
+        number -=1;// отнимаем от числа еденицу
         String str = makeBinaryIfPositive(number);
         char[] arrayOfChar = str.toCharArray();
         for (int i = 0; i < arrayOfChar.length; i++) {
