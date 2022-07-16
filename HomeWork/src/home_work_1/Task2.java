@@ -4,18 +4,24 @@ public class Task2 {
     @SuppressWarnings("all")
     public static void foo() {
         //****** 2.1 ******
+        //  5 + 2 / 8
         int result = 5 + 2 / 8;
+        System.out.println("5 + 2 / 8  = " + result);
         /*
          1) 2/8 = 0.25;
          2) 5+0.25 = 5 (отбрасование дробной части т.к int)
         */
+
         //****** 2.2 ******
-        System.out.println("5 + 2 / 8  = " + result);
+        //(5 + 2) / 8
+        result = (5 + 2) / 8;
         /*
          1) 5+2 = 7
          2) 7/8 = 0 (отбрасование дробной части т.к int)
         */
+
         //****** 2.3 ******
+        //(5 + a++) / 8
         int a = 2;
         result = (5 + a++) / 8;
         System.out.println("(5 + a++) / 8  = " + result);
@@ -25,7 +31,9 @@ public class Task2 {
          3)  result = 0;
          4)  a++
         */
+
         //****** 2.4 ******
+        //(5 + a++) / --b
         a = 2;
         int b = 8;
         result = (5 + a++) / --b;
@@ -37,7 +45,9 @@ public class Task2 {
          4)  result = 1
          5)  2++
          */
+
         //****** 2.5 ******
+        //(5 * 2 >> 2++) / --b
         a = 2;
         b = 8;
         result = (5 * 2 >> a++) / --b;
@@ -48,7 +58,9 @@ public class Task2 {
          3) --b
          4) 2/7 = 0 (отбрасование дробной части т.к int)
         */
+
         //****** 2.6 ******
+        //(5 + 7 > 20 ? 68 : 22 * 2 >> a++) / --b
         a = 2;
         b = 8;
         result = (5 + 7 > 20 ? 68 : 22 * 2 >> a++) / --b;
@@ -63,14 +75,18 @@ public class Task2 {
          7) result = 1
          8) a++
         */
+
         //****** 2.7 ******
+        //(5 + 7 > 20 ? 68 >= 68 : 22 * 2 >> a++) / --b
         a = 2;
         b = 8;
         /*
          1) result = (5 + 7 > 20 ? 68 >= 68 : 22 * 2 >> a++) / --b;
          2) ошибка компиляции , так как на месте блока "True" Тернарного оператора не может быть тип Boolean
          */
+
         //****** 2.8 ******
+        //6 - 2 > 3 && 12 * 12 <= 119
         boolean sayResult = 6 - 2 > 3 && 12 * 12 <= 119;
         System.out.println(sayResult);
         /*
@@ -80,7 +96,9 @@ public class Task2 {
          4) true && false
          5) sayResult = false
         */
+
         //******2.9 ******
+        //true && false
         sayResult = true && false;
         System.out.println(sayResult);
         // false
