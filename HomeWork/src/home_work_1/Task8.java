@@ -1,38 +1,34 @@
 package home_work_1;
 
 public class Task8 {
-    //   Создать СТАТИЧЕСКИЙ метод String toBinaryString(byte number) и возвращает двоичное представление числа. В методе можно использовать только обычную математику которая описана в теории.
-    //   Если число отрицательное то вернуть дополнительный код. Теория https://planetcalc.ru/747. Пример:
-    //           8.1 Вводим: 42.  Возвращает: 00101010
-    //           8.2 Вводим: 15.  Возвращает: 00001111
-    //           8.3 Вводим: -42. Возвращает: 11010110
-    //           8.4 Вводим: -15. Возвращает: 11110001
     public static String toBinaryString(byte number) {
         if (number > 0) return makeBinaryIfPositive(number);// если вводимое число > 0
         else return makeBinaryIfNegative(number);// если вводимое число < 0
     }
 
     private static String makeBinaryIfPositive(byte number) {
-        String result = "";
-        int[] arrayWithZero = new int[8];
-        int flagIndexInArray = arrayWithZero.length - 1;
+        //прямой код только для положительных чисел.Знаковый бит всегда 0 =>диапозон чисел -127 до +127
+        String result = "";// для конкатенации с числом для получения строки
+        int[] arrayWithZero = new int[8];//массив на 8 элементов по дефолту [0,0,0,0,0,0,0,0]
+        int flagIndexInArray = arrayWithZero.length - 1;//индекс для элемента массива
         while (number != 0) {
-            arrayWithZero[flagIndexInArray] = (number % 2);
+            arrayWithZero[flagIndexInArray] = (number % 2);// записываем с последнего элемента массива 0 или 1
             number /= 2;
-            flagIndexInArray--;
+            flagIndexInArray--;// уменьшаем индекс
         }
-        for (int n : arrayWithZero) {
-            result += n;
+        for (int numIn : arrayWithZero) {
+            result += numIn;//поэлементно преобразуем число в строку
         }
         return result;
     }
-
+   // Для отрицательных чисел обратный код получается из неотрицательного числа в прямом коде, путем
+   // инвертирования всех битов (1 меняем на 0, а 0 меняем на 1).
     private static String makeBinaryIfNegative(byte number) {
-        number *= -1;
+        number *= -1;// убираем минус чтобы он не попадал как char в массив
         String str = makeBinaryIfPositive(number);
         char[] arrayOfChar = str.toCharArray();
         for (int i = 0; i < arrayOfChar.length; i++) {
-            if (arrayOfChar[i] == '0') {
+            if (arrayOfChar[i] == '0') {//инвертирования всех битов
                 arrayOfChar[i] = '1';
             } else {
                 arrayOfChar[i] = '0';
