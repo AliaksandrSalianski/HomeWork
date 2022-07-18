@@ -21,9 +21,10 @@ public class Task8 {
         }
         return result;
     }
+
     private static String makeBinaryIfNegative(byte number) {
         number *= -1;// убираем минус чтобы он не попадал как char в массив
-        number -=1;// отнимаем от числа еденицу
+        number -= 1;// отнимаем от числа еденицу
         String str = makeBinaryIfPositive(number);
         char[] arrayOfChar = str.toCharArray();
         for (int i = 0; i < arrayOfChar.length; i++) {
