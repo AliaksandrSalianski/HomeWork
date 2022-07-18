@@ -2,12 +2,11 @@ package homeWork_2.loops;
 
 public class Loop1 {
     /**
-     * Циклы. Для преобразования строки в число можно использовать http://proglang.su/java/numbers-parseint, если хотите можете добавить проверки на корректность ввода данных.
      * Число положительное, максимум long:
-     * 1.1. Перемножить числа от 1 до числа (включительно) введенного через аргумент к исполняемой программе. Есть нюанс с переполнением, можно добавить проверки и сообщения пользователю.
-     * Пример: Ввели 5, должно получиться в консоли: 1 * 2 * 3 * 4 * 5 = ответ
-     * 1.1.1. Используя только цикл
-     * 1.1.2.* Используя рекурсию
+     * Перемножить числа от 1 до числа (включительно) введенного через аргумент к исполняемой программе.
+     * в случае переполнения выврдится сообщение
+     * 1. Используя только цикл
+     * 2. Используя рекурсию
      */
     public static void main(String[] args) {
         multiplyWithCycle(23);
@@ -23,7 +22,7 @@ public class Loop1 {
                 previousResult *= i;
                 if (previousResult < 0) {
                     System.out.println(i + " overflow of \"long\" type number= " + "result =" + previousResult);
-                    System.out.printf("value at i = %d = %d",i-1,result);
+                    System.out.printf("value at i = %d = %d", i - 1, result);
                     break;
                 } else {
                     result *= i;
@@ -32,5 +31,9 @@ public class Loop1 {
                 }
             }
         }
+    }
+
+    public static void multiplyWithRecursion(int number) {
+
     }
 }
