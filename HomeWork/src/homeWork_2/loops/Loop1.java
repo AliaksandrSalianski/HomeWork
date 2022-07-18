@@ -8,13 +8,10 @@ public class Loop1 {
      * 1. Используя только цикл
      * 2. Используя рекурсию
      */
-    public static void main(String[] args) {
-        multiplyWithCycle(23);
-    }
 
     public static void multiplyWithCycle(int number) {
         long result = 1;
-        if (!(number > 0)) {
+        if (!(number >= 0)) {
             System.out.println("wrong input");
         } else {
             long previousResult = 1;
@@ -31,9 +28,5 @@ public class Loop1 {
                 }
             }
         }
-    }
-
-    public static void multiplyWithRecursion(int number) {
-
     }
 }
