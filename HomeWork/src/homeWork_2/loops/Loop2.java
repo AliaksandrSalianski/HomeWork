@@ -7,7 +7,6 @@ import java.util.Scanner;
  */
 
 public class Loop2 {
-
     public static void printMultiplication() {
         int number;
         int result = 1;
@@ -29,9 +28,8 @@ public class Loop2 {
             result *= charToNumber;
             String multiplyOrEquals = i == charArray.length - 1 ? "=" + result : "*";
             System.out.print(charArray[i] + multiplyOrEquals);
-
         }
-
+        scanner.close();
     }
 }
 
