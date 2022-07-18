@@ -8,11 +8,6 @@ public class Loop3 {
      *  Второе число это степень в которую возводят первое число.
      *  Степень - только положительная и целая. Возводимое число - может быть отрицательным и оно будет дробным. Math использовать нельзя.
      */
-
-    public static void main(String[] args) {
-        exponentiation();
-    }
-
     public static void exponentiation() {
         double result = 1;
         double number = 0;
@@ -41,5 +36,6 @@ public class Loop3 {
             }
         }
         System.out.println(number +" ^ "+ degree +" = "+result);
+        scanner.close();
     }
 }
