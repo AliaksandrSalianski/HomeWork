@@ -4,10 +4,6 @@ import java.security.SecureRandom;
 import java.util.Scanner;
 
 public class Loop5 {
-    public static void main(String[] args) {
-
-    }
-
     /**
      * Найти наибольшую цифру натурального числа
      */
@@ -109,9 +105,9 @@ public class Loop5 {
      * Вывести ряд чисел в диапазоне с шагом
      */
     public static void stepOutput() {
-        int max = 0;
-        int min = 0;
-        int step = 0;
+        int max;
+        int min;
+        int step;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter max");
         if (scanner.hasNextInt()) {
