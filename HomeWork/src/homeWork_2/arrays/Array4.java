@@ -10,11 +10,11 @@ public class Array4 {
      * 3. Элементы массива, которые меньше среднего арифметического
      * 4. Найти два наименьших (минимальных) элемента массива
      * 5. Сжать массив, удалив элементы, принадлежащие интервалу
-     * 2.4.6. Сумма цифр массива
+     * 6. Сумма цифр массива
      */
     public static void main(String[] args) {
         int[] array = ArraysUtils.arrayRandom(3, 100);
-        printTwoMinInArray(array);
+        System.out.println(getSumOfAllDigits(array));
     }
 
     //1
@@ -85,5 +85,20 @@ public class Array4 {
             }
         }
         return arrayWork;
+    }
+
+    //6
+    public static int getSumOfAllDigits(int[] array) {
+        int result = 0;
+        StringBuilder str = new StringBuilder();
+        for (int nb : array) {
+            nb = nb > 0 ? nb : nb * (-1);
+            str.append(String.valueOf(nb));
+        }
+        char[] arrayOfChar = (str.toString()).toCharArray();
+        for (char c : arrayOfChar) {
+            result += Character.getNumericValue(c);
+        }
+        return result;
     }
 }
