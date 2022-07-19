@@ -1,12 +1,11 @@
 package homeWork_2.loops;
 
 import java.security.SecureRandom;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Loop5 {
     public static void main(String[] args) {
-      stepOutput();
+
     }
 
     /**
@@ -56,7 +55,7 @@ public class Loop5 {
     public static void countEvenAndOdd() {
         int eventCount = 0;
         int oddCount = 0;
-        int enterNumber = 0;
+        int enterNumber;
         System.out.println("Enter number integer");
         Scanner scanner = new Scanner(System.in);
         if (!scanner.hasNextInt()) {
@@ -138,6 +137,27 @@ public class Loop5 {
         for (int i = min; i <= max; i += step) {
             System.out.print(i + " ");
         }
+        scanner.close();
+    }
+
+    /**
+     * выводит число в обратном порядке
+     */
+    public static void numberFlip() {
+        System.out.println("Enter integer number");
+        int number = 0;
+        Scanner scanner = new Scanner(System.in);
+        if (!scanner.hasNextInt()) {
+            System.out.println("Wrong input");
+        } else {
+            number = scanner.nextInt();
+        }
+        String str = Integer.toString(number);
+        char[] arrayOfChar = str.toCharArray();
+        for (int i = arrayOfChar.length - 1; i >= 0; i--) {
+            System.out.print(arrayOfChar[i]);
+        }
+        scanner.close();
     }
 }
 
