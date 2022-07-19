@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Loop5 {
     public static void main(String[] args) {
-        fib();
+      stepOutput();
     }
 
     /**
@@ -98,12 +98,46 @@ public class Loop5 {
             long[] arrayFib = new long[number + 2];
             arrayFib[0] = 0;
             arrayFib[1] = 1;
-            for (int j = 2; j <= arrayFib.length-1; j++) {
+            for (int j = 2; j <= arrayFib.length - 1; j++) {
                 arrayFib[j] = arrayFib[j - 1] + arrayFib[j - 2];
-                System.out.print(arrayFib[j]+" ");
+                System.out.print(arrayFib[j] + " ");
             }
+            scanner.close();
         }
+    }
 
+    /**
+     * Вывести ряд чисел в диапазоне с шагом
+     */
+    public static void stepOutput() {
+        int max = 0;
+        int min = 0;
+        int step = 0;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter max");
+        if (scanner.hasNextInt()) {
+            max = scanner.nextInt();
+        } else {
+            System.out.println("wrong max input");
+            return;
+        }
+        System.out.println("Enter min");
+        if (scanner.hasNextInt()) {
+            min = scanner.nextInt();
+        } else {
+            System.out.println("wrong min input");
+            return;
+        }
+        System.out.println("Enter step");
+        if (scanner.hasNextInt()) {
+            step = scanner.nextInt();
+        } else {
+            System.out.println("wrong step input");
+            return;
+        }
+        for (int i = min; i <= max; i += step) {
+            System.out.print(i + " ");
+        }
     }
 }
 
