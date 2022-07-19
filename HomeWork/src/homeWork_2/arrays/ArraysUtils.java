@@ -7,11 +7,6 @@ public class ArraysUtils {
     /**
      * Данный метод размер массива и каждый его элемент запрашивает у пользователя через консоль.
      */
-    public static void main(String[] args) {
-        int[] mass = arrayFromConsole();
-        System.out.println(Arrays.toString(mass));
-    }
-
     public static int[] arrayFromConsole() {
         int size;
         int[] array;
@@ -48,7 +43,7 @@ public class ArraysUtils {
     public static int[] arrayRandom(int size, int maxValueExclusion) {
         int[] array = new int[size];
         for (int i = 0; i < array.length; i++) {
-            array[i] = (int) (Math.random() * maxValueExclusion);
+            array[i] = (int) (-100 + Math.random() * maxValueExclusion);
         }
         return array;
     }
