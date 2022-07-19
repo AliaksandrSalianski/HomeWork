@@ -14,6 +14,7 @@ public class Array4 {
      */
     public static void main(String[] args) {
         int[] array = ArraysUtils.arrayRandom(50, 100);
+       printItemsBelowAverage(array);
     }
 
     //1
@@ -37,6 +38,24 @@ public class Array4 {
         }
         return numberMax;
     }
+
     //3
+    public static void printItemsBelowAverage(int[] array) {
+        int summa = 0;
+        int average;
+        StringBuilder result = new StringBuilder();
+        for (int num : array) {
+            summa += num;
+        }
+        average = summa / array.length;
+        for (int num : array) {
+            if (num < average) {
+                result.append(num).append(" ");
+            }
+        }
+        System.out.println("Average = "+ average);
+        System.out.println("Items below average is : ");
+        System.out.println(result);
+    }
 
 }
