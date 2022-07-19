@@ -75,5 +75,15 @@ public class Array4 {
     }
 
     //5
-
+    public static int[] deleteInInterval(int[] array, int min, int max) {
+        int[] arrayWork = new int[array.length];
+        int flagIndex = 0;
+        for (int j : array) {
+            if (j >= min && j <= max) {
+                arrayWork[flagIndex] = j;
+                flagIndex++;
+            }
+        }
+        return arrayWork;
+    }
 }
