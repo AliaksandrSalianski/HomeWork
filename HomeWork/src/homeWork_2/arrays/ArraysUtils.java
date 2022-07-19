@@ -43,7 +43,8 @@ public class ArraysUtils {
     public static int[] arrayRandom(int size, int maxValueExclusion) {
         int[] array = new int[size];
         for (int i = 0; i < array.length; i++) {
-            array[i] = (int) (-100 + Math.random() * maxValueExclusion);
+            int sing = Math.random() < 0.5 ? -1 : 1;
+            array[i] = (int) (Math.random() * maxValueExclusion) * sing;
         }
         return array;
     }
