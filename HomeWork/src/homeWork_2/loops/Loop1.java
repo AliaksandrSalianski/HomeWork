@@ -4,9 +4,8 @@ public class Loop1 {
     /**
      * Число положительное, максимум long:
      * Перемножить числа от 1 до числа (включительно) введенного через аргумент к исполняемой программе.
-     * в случае переполнения выврдится сообщение
-     * 1. Используя только цикл
-     * 2. Используя рекурсию
+     * в случае переполнения выводится сообщение
+     * Используя только цикл
      */
 
     public static void multiplyWithCycle(int number) {
@@ -34,10 +33,13 @@ public class Loop1 {
         multiplyWithRecursion(6);
     }
 
+    /**
+     * Число положительное, максимум long:
+     * Перемножить числа от 1 до числа (включительно) введенного через аргумент к исполняемой программе.
+     * в случае переполнения выводится сообщение.
+     * Используя рекурсию
+     */
     public static long multiplyWithRecursion(int number) {
-        int numberHelper;
-        numberHelper = number;
-        long resultPrev = 1;
         long result = 1;
         if (number < 0) {
             System.out.println("wrong input");
@@ -45,27 +47,11 @@ public class Loop1 {
         if (number == 0) {
             return result;
         }
-        result = number * multiplyWithRecursion(number + 1);
+        result = number * multiplyWithRecursion(number - 1);
         System.out.print(number + "*");
         // if (number != 2) {
         //     System.out.print("*");
         //}
-        return result;
-        // System.out.print(number);
-    }
-
-
-    public static long factorial(int number) {
-        long result = 1;
-        if (number == 1 || number == 0) {
-            return result;
-        }
-        result = number * factorial(number - 1);
-        System.out.print(" * " + number);
-        if (result < 0) {
-            System.out.println("Произошло переполнение");
-            System.exit(1);
-        }
         return result;
     }
 }
