@@ -29,7 +29,7 @@ public class Loop1 {
     }
 
     public static void main(String[] args) {
-        System.out.println(multiplyWithRecursion(10));
+        System.out.println(multiplyWithRecursion(25));
         ;
     }
 
@@ -39,7 +39,7 @@ public class Loop1 {
      * Используя рекурсию
      */
     public static long multiplyWithRecursion(int number) {
-
+        // печатает в обратном порядке
         long result = 1;
         if (number < 0) {
             System.out.print("wrong input");
@@ -53,6 +53,12 @@ public class Loop1 {
             System.out.print("*");
         }
         result = number * multiplyWithRecursion(number - 1);
+        if (result < 0) {
+            System.out.println("");
+            System.out.print(" overflow");
+            System.out.println(" in number =" + number);
+            return result;
+        }
         return result;
     }
 
