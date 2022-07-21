@@ -1,52 +1,70 @@
 package homeWork_2.loops;
 
 import java.security.SecureRandom;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Loop5 {
     /**
-     * Найти наибольшую цифру натурального числа
+     * Метод находит наибольшую цифру натурального числа полученную через Scanner.Вводится только целочисленное число в случае неверного ввода пишется сообщение.
+     * Число переводится в массив char, первоночалньное значение max - это элеменнт в нулевой ячейки. Поэлементно сравнивается  при помощи цикла с каждым значением в массиве.
+     * Максимальное значение сохраняется в переменную max
      */
+
     public static void findMaxNumber() {
         int enterNumber = 0;
         System.out.println("Enter integer number");
         Scanner scanner = new Scanner(System.in);
-        if (scanner.hasNextInt()) {
+        if (!scanner.hasNextInt()) {
+            System.out.println("Wrong input");
+        } else {
             enterNumber = scanner.nextInt();
-        }
-        String str = enterNumber + "";
-        char[] array = str.toCharArray();
-        int max = 0;
-        for (int i = 1; i < array.length; i++) {
-            max = Character.getNumericValue(array[0]);
-            if (Character.getNumericValue(array[i]) > max) {
-                max = Character.getNumericValue(array[i]);
+            String str = enterNumber + "";
+            char[] array = str.toCharArray();
+            int max = 0;
+            for (int i = 1; i < array.length; i++) {
+                max = Character.getNumericValue(array[0]);
+                if (Character.getNumericValue(array[i]) > max) {
+                    max = Character.getNumericValue(array[i]);
+                }
             }
+            System.out.printf("Max number in %d = %d", enterNumber, max);
+            scanner.close();
         }
-        System.out.printf("Max number in %d = %d", enterNumber, max);
+    }
+
+    /**
+     * Метод выводит процент четных случайных чисел из количества введенного пользователем через Scanner.Консоль принимает только
+     * целочисленные значения, в случае ошибки выводится сообщение о неверном вводе.
+     */
+    public static void randomCheck() {
+        System.out.println("enter the number of random numbers");
+        Scanner scanner = new Scanner(System.in);
+        if (!scanner.hasNextInt()) {
+            System.out.println("wrong input");
+        } else {
+            int countEnter = scanner.nextInt();
+            int result = 0;
+            Random random = new Random();
+            int count = countEnter;
+            while (count != 0) {
+                int randomInt = random.nextInt();
+                if (randomInt % 2 == 0) {
+                    result++;
+                }
+                count--;
+            }
+            int percentageResult = (int) (result * 1.0 / countEnter * 100);
+            System.out.printf("Probability of getting even numbers = %d%% during generation %d random numbers", percentageResult, countEnter);
+        }
         scanner.close();
     }
 
     /**
-     * Вероятность четных случайных чисел
-     */
-    public static void randomCheck() {
-        int result = 0;
-        int min = 1;
-        int max = Integer.MAX_VALUE;
-        int count = 1000;
-        while (count != 0) {
-            int random = new SecureRandom().nextInt(max - min) + min;
-            if (random % 2 == 0) {
-                result++;
-            }
-            count--;
-        }
-        System.out.printf("the number of even random numbers from 1000 = %d", result);
-    }
-
-    /**
-     * Посчитать четные и нечетные цифры числа
+     * Метод принимает через Scanner  только целые числа в случае неверного ввода выдается ошибка.
+     * Метод считает четные и нечетные цифры числа путем представления числа в виде массива char и прохождением по массиву циклом.
+     * Количество четных  переменная "eventCount"
+     * Количество нечетных  переменная "oddCount"
      */
     public static void countEvenAndOdd() {
         int eventCount = 0;
@@ -67,15 +85,16 @@ public class Loop5 {
                     oddCount++;
                 }
             }
-            System.out.printf("In number %d event = %d  odd =%d", enterNumber, eventCount, oddCount);
+            System.out.printf("In number %d \nevent = %d\n  \rodd =%d\t", enterNumber, eventCount, oddCount);
             scanner.close();
         }
     }
 
     /**
-     * фибоначи
+     * метод принимает от пользователя только целое число в случае неверного ввогда выводится сообщение об ошибки.
+     * в консоль выводятся числа Фибоначи количеством введенного значения пользователем.При помощи масссива и цикла.
      */
-    public static void fib() {
+    public static void fibWithArray() {
         System.out.println("Enter integer number");
         int number = 0;
         Scanner scanner = new Scanner(System.in);
@@ -101,8 +120,38 @@ public class Loop5 {
         }
     }
 
+
     /**
-     * Вывести ряд чисел в диапазоне с шагом
+     * метод принимает от пользователя только целое число в случае неверного ввогда выводится сообщение об ошибки.
+     * в консоль выводятся числа Фибоначи количеством введенного значения пользователем. При помощи только цикла.
+     */
+    public static void fibWithFor() {
+        int number = 0;
+        System.out.println("Enter integer number");
+        Scanner scanner = new Scanner(System.in);
+        if (!scanner.hasNextInt()) {
+            System.out.println("Wrong input");
+        } else {
+            number = scanner.nextInt();
+            System.out.println("Number = " + number);
+            int numberOne = 1;
+            int numberTwo = 1;
+            int helper = 0;
+            System.out.print(numberTwo + " ");
+            for (int i = 0; i < (number - 1); i++) {
+                helper = numberTwo + numberOne;
+                numberOne = numberTwo;
+                numberTwo = helper;
+                System.out.print(helper + " ");
+            }
+            scanner.close();
+        }
+    }
+
+    /**
+     * Метод выводит в консоль ряд натуральных чисел от min до max c шагом step при помощи цикла. Все значения
+     * переменных целочисленные и
+     * вводятся через Scanner.В случае неверного ввода выводится сообщение.
      */
     public static void stepOutput() {
         int max;
@@ -137,7 +186,9 @@ public class Loop5 {
     }
 
     /**
-     * выводит число в обратном порядке
+     * метод формирует из введенного числа через Scanner обратное по порядку входящих в него цифр и выводит на экран.
+     * Введенное число только целочисленное в случае ошибки выводится сообщение.Число преобразуется в массив и обратным
+     * циклом выводятся элементы на экран
      */
     public static void numberFlip() {
         System.out.println("Enter integer number");
