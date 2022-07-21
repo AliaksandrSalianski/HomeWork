@@ -1,23 +1,11 @@
 package homeWork_2.arrays;
 
-import java.util.Arrays;
-
 public class Array4 {
-
     /**
-     * 1. Сумма четных положительных элементов массива
-     * 2. Максимальный из элементов массива с четными индексами
-     * 3. Элементы массива, которые меньше среднего арифметического
-     * 4. Найти два наименьших (минимальных) элемента массива
-     * 5. Сжать массив, удалив элементы, принадлежащие интервалу
-     * 6. Сумма цифр массива
+     * метод считает при помощи цикла в массиве сумму четных положительных числел
+     * и возвращает это значение
      */
-    public static void main(String[] args) {
-        int[] array = ArraysUtils.arrayRandom(3, 100);
-        System.out.println(getSumOfAllDigits(array));
-    }
 
-    //1
     public static int sumOfEvenPositive(int[] array) {
         int result = 0;
         for (int n : array) {
@@ -28,7 +16,9 @@ public class Array4 {
         return result;
     }
 
-    //2
+    /**
+     * Метод возвращает максимальный из элементов массива с четными индексами
+     */
     public static int getMaxOfEven(int[] array) {
         int numberMax = array[0];
         for (int i = 2; i < array.length; i += 2) {
@@ -39,7 +29,10 @@ public class Array4 {
         return numberMax;
     }
 
-    //3
+    /**
+     * Метод выводит элементы массива, которые меньше среднего арифметического
+     */
+
     public static void printItemsBelowAverage(int[] array) {
         int summa = 0;
         int average;
@@ -58,7 +51,9 @@ public class Array4 {
         System.out.println(result);
     }
 
-    //4
+    /**
+     * Метод  выводит два  наименьших (минимальных) элемента массива
+     */
     public static void printTwoMinInArray(int[] array) {
         int maxOne = Integer.MIN_VALUE;
         int maxTwo = Integer.MIN_VALUE;
@@ -74,7 +69,10 @@ public class Array4 {
         System.out.println("Max second = " + maxTwo);
     }
 
-    //5
+    /**
+     * Метод сжимает массив, удалив из него все элементы, величина которых находится в интервале [min, max].
+     * Освободившиеся в конце массива элементы заполнить нулями и возврощает сжатый массив
+     */
     public static int[] deleteInInterval(int[] array, int min, int max) {
         int[] arrayWork = new int[array.length];
         int flagIndex = 0;
@@ -84,16 +82,19 @@ public class Array4 {
                 flagIndex++;
             }
         }
-        return arrayWork;
+        array = arrayWork;
+        return array;
     }
 
-    //6
+    /**
+     * Метод возврощает сумму всех цифр целочисленного массива.
+     */
     public static int getSumOfAllDigits(int[] array) {
         int result = 0;
         StringBuilder str = new StringBuilder();
         for (int nb : array) {
             nb = nb > 0 ? nb : nb * (-1);
-            str.append(String.valueOf(nb));
+            str.append(nb);
         }
         char[] arrayOfChar = (str.toString()).toCharArray();
         for (char c : arrayOfChar) {
