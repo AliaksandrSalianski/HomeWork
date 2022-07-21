@@ -1,18 +1,13 @@
 package homeWork_2.arrays;
 
-import java.lang.reflect.Array;
 
-/**
- * Создать класс ArraysIteration. В этом клссе написать перебор массива при помощи do....while, while, for, foreach.
- * Вызывая ранее созданный метод arrayFromConsole (ArraysUtils.arrayFromConsole()) получить массив. Все задачи в одном классе, в отдельных методах. Должно получиться 3 метода:
- * 1. Вывести все элементы в консоль.
- * 2. Вывести каждый второй элемент массива в консоль.
- * 3. Вывести все элементы массива в консоль в обратном порядке.
- */
-public class ArraysIteration {
-    //1
+public class Array2ArraysIteration {
+    /**
+     * Метод печатает все элементы массива при помощи
+     * do....while, while, for, foreach.
+     */
     public static void printAllElements() {
-        int[] array = ArraysUtils.arrayFromConsole();
+        int[] array = Array1ArraysUtils.arrayFromConsole();
         //do while
         int i = 0;
         do {
@@ -38,9 +33,12 @@ public class ArraysIteration {
         }
     }
 
-    //2
+    /**
+     * Метод печатает каждый второй элемент массива при помощи
+     * do....while, while, for, foreach.
+     */
     public static void printEverySecond() {
-        int[] array = ArraysUtils.arrayFromConsole();
+        int[] array = Array1ArraysUtils.arrayFromConsole();
         //do while
         int i = 0;
         do {
@@ -70,9 +68,12 @@ public class ArraysIteration {
         }
     }
 
-    //3
+    /**
+     * Метод печатает массив в обратном порядке при помощи
+     * do....while, while, for, foreach.
+     */
     public static void printReverse() {
-        int[] array = ArraysUtils.arrayFromConsole();
+        int[] array = Array1ArraysUtils.arrayFromConsole();
         //do while
         int i = array.length - 1;
         do {
