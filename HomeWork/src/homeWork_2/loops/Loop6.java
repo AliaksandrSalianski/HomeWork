@@ -2,7 +2,7 @@ package homeWork_2.loops;
 
 public class Loop6 {
     /**
-     * выводит таблицу умножения
+     * выводит таблицу умножения в консоль при помощи двух циклов
      */
 
     public static void displayMultiplicationTable() {
@@ -21,3 +21,4 @@ public class Loop6 {
         }
     }
 }
+
