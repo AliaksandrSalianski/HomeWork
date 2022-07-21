@@ -2,10 +2,9 @@ package homeWork_2.loops;
 
 public class Loop1 {
     /**
-     * Число положительное, максимум long:
-     * Перемножить числа от 1 до числа (включительно) введенного через аргумент к исполняемой программе.
-     * в случае переполнения выводится сообщение
-     * Используя только цикл
+     * Метод перемножает числа от 1 до числа (включительно) введенного через аргумент метода.
+     * в случае переполнения выводится сообщение со значением до переполнения и при переполненнии
+     * Используется только цикл
      */
 
     public static void multiplyWithCycle(int number) {
@@ -30,28 +29,32 @@ public class Loop1 {
     }
 
     public static void main(String[] args) {
-        multiplyWithRecursion(6);
+        System.out.println(multiplyWithRecursion(10));
+        ;
     }
 
     /**
      * Число положительное, максимум long:
      * Перемножить числа от 1 до числа (включительно) введенного через аргумент к исполняемой программе.
-     * в случае переполнения выводится сообщение.
      * Используя рекурсию
      */
     public static long multiplyWithRecursion(int number) {
+
         long result = 1;
         if (number < 0) {
-            System.out.println("wrong input");
+            System.out.print("wrong input");
         }
-        if (number == 0) {
+        if (number == 1) {
+            System.out.print("*1 = " + result);
             return result;
         }
+        System.out.print(number);
+        if (number != 2) {
+            System.out.print("*");
+        }
         result = number * multiplyWithRecursion(number - 1);
-        System.out.print(number + "*");
-        // if (number != 2) {
-        //     System.out.print("*");
-        //}
         return result;
     }
+
 }
+
