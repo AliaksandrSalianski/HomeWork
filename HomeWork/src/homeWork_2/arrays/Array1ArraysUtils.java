@@ -1,13 +1,20 @@
 package homeWork_2.arrays;
 
+import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
-public class ArraysUtils {
+public class Array1ArraysUtils {
     /**
      * Данный метод размер массива и каждый его элемент запрашивает у пользователя через консоль.
      * Если вводится не целочисленное число выводиься сообщение и возвращается массив зопалненный нулями с позиции
      * где ввелось неверное значение
      */
+    public static void main(String[] args) {
+        int[] container = arrayFromConsole();
+        int[] container2 = arrayRandom(5, 100);
+    }
+
     public static int[] arrayFromConsole() {
         int size;
         int[] array;
@@ -40,13 +47,14 @@ public class ArraysUtils {
     /**
      * Данный метод принимает два аргумента. Первый (size) указывает размер
      * массива который мы хотим получить. Второй (maxValueExclusion) указывает до какого числа генерировать рандомные числа.
-     * добавлен так же случайный выбор знака для рандомного числа
+     * диапозон рандомных чисел [0 ; maxValueExclusion)
      */
+
     public static int[] arrayRandom(int size, int maxValueExclusion) {
         int[] array = new int[size];
+        Random random = new Random();
         for (int i = 0; i < array.length; i++) {
-            int sing = Math.random() < 0.5 ? -1 : 1;
-            array[i] = (int) (Math.random() * maxValueExclusion) * sing;
+            array[i] = random.nextInt(maxValueExclusion);
         }
         return array;
     }
