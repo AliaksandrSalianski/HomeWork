@@ -1,11 +1,12 @@
 package homeWork_2.arrays;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArraysUtils {
     /**
      * Данный метод размер массива и каждый его элемент запрашивает у пользователя через консоль.
+     * Если вводится не целочисленное число выводиься сообщение и возвращается массив зопалненный нулями с позиции
+     * где ввелось неверное значение
      */
     public static int[] arrayFromConsole() {
         int size;
@@ -39,6 +40,7 @@ public class ArraysUtils {
     /**
      * Данный метод принимает два аргумента. Первый (size) указывает размер
      * массива который мы хотим получить. Второй (maxValueExclusion) указывает до какого числа генерировать рандомные числа.
+     * добавлен так же случайный выбор знака для рандомного числа
      */
     public static int[] arrayRandom(int size, int maxValueExclusion) {
         int[] array = new int[size];
