@@ -9,10 +9,6 @@ import java.util.Scanner;
  */
 
 public class Loop2 {
-    public static void main(String[] args) {
-        System.out.println(printMultiplication());
-    }
-
     public static String printMultiplication() {
         String strResult = "";
         int number;
