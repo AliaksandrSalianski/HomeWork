@@ -1,13 +1,15 @@
 package homeWork_2.arrays;
 
 
+import homeWork_2.utils.ArraysUtils;
+
 public class Array2ArraysIteration {
     /**
      * Метод печатает все элементы массива при помощи
      * do....while, while, for, foreach.
      */
     public static void printAllElements() {
-        int[] array = Array1ArraysUtils.arrayFromConsole();
+        int[] array = ArraysUtils.arrayFromConsole();
         //do while
         int i = 0;
         do {
@@ -38,7 +40,7 @@ public class Array2ArraysIteration {
      * do....while, while, for, foreach.
      */
     public static void printEverySecond() {
-        int[] array = Array1ArraysUtils.arrayFromConsole();
+        int[] array = ArraysUtils.arrayFromConsole();
         //do while
         int i = 0;
         do {
@@ -73,7 +75,7 @@ public class Array2ArraysIteration {
      * do....while, while, for, foreach.
      */
     public static void printReverse() {
-        int[] array = Array1ArraysUtils.arrayFromConsole();
+        int[] array = ArraysUtils.arrayFromConsole();
         //do while
         int i = array.length - 1;
         do {
