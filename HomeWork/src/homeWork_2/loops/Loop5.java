@@ -65,7 +65,7 @@ public class Loop5 {
      * Количество четных  переменная "eventCount"
      * Количество нечетных  переменная "oddCount"
      */
-    public static void countEvenAndOdd() {
+    public static int[] countEvenAndOdd() {
         int eventCount = 0;
         int oddCount = 0;
         int enterNumber;
@@ -73,6 +73,7 @@ public class Loop5 {
         Scanner scanner = new Scanner(System.in);
         if (!scanner.hasNextInt()) {
             System.out.println("wrong input");
+            return new int[0];
         } else {
             enterNumber = scanner.nextInt();
             String str = enterNumber + "";
@@ -84,9 +85,10 @@ public class Loop5 {
                     oddCount++;
                 }
             }
-            System.out.printf("In number %d \nevent = %d\n  \rodd =%d\t", enterNumber, eventCount, oddCount);
-            scanner.close();
+            System.out.printf("In number %d \nevent = %d\n  \rodd = %d\t\n", enterNumber, eventCount, oddCount);
         }
+        scanner.close();
+        return new int[]{eventCount, oddCount};
     }
 
     /**
