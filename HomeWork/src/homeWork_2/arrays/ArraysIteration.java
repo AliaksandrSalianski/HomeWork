@@ -8,6 +8,7 @@ public class ArraysIteration {
      * Метод печатает все элементы массива при помощи
      * do....while, while, for, foreach.
      */
+
     public static void printAllElements() {
         int[] array = ArraysUtils.arrayFromConsole();
         //do while
@@ -39,6 +40,7 @@ public class ArraysIteration {
      * Метод печатает каждый второй элемент массива при помощи
      * do....while, while, for, foreach.
      */
+
     public static void printEverySecond() {
         int[] array = ArraysUtils.arrayFromConsole();
         //do while
@@ -74,6 +76,7 @@ public class ArraysIteration {
      * Метод печатает массив в обратном порядке при помощи
      * do....while, while, for, foreach.
      */
+    git
     public static void printReverse() {
         int[] array = ArraysUtils.arrayFromConsole();
         //do while
