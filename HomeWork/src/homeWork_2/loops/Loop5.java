@@ -37,6 +37,7 @@ public class Loop5 {
      * Метод выводит процент четных случайных чисел из количества введенного пользователем через Scanner.Консоль принимает только
      * целочисленные значения, в случае ошибки выводится сообщение о неверном вводе.
      */
+
     public static void randomCheck() {
         System.out.println("enter the number of random numbers");
         Scanner scanner = new Scanner(System.in);
@@ -66,6 +67,7 @@ public class Loop5 {
      * Количество четных  переменная "eventCount"
      * Количество нечетных  переменная "oddCount"
      */
+
     public static int[] countEvenAndOdd() {
         int eventCount = 0;
         int oddCount = 0;
@@ -133,9 +135,7 @@ public class Loop5 {
      * метод принимает от пользователя только целое число в случае неверного ввогда выводится сообщение об ошибки.
      * в консоль выводятся числа Фибоначи количеством введенного значения пользователем. При помощи только цикла.
      */
-    public static void main(String[] args) {
-        System.out.println(fibWithFor());
-    }
+
     public static String fibWithFor() {
         String result = "Fib :";
         int number = 0;
@@ -155,7 +155,7 @@ public class Loop5 {
             int helper = 0;
             switch (number) {
                 case (0):
-                    return result ;
+                    return result;
                 case (1):
                     return result + number;
                 default:
@@ -163,7 +163,7 @@ public class Loop5 {
                         helper = numberTwo + numberOne;
                         numberOne = numberTwo;
                         numberTwo = helper;
-                        result += helper +" ";
+                        result += helper + " ";
                     }
             }
             scanner.close();
@@ -172,40 +172,41 @@ public class Loop5 {
     }
 
     /**
-     * Метод выводит в консоль ряд натуральных чисел от min до max c шагом step при помощи цикла. Все значения
+     * Метод возврощает ряд натуральных чисел от min до max c шагом step при помощи цикла. Все значения
      * переменных целочисленные и
      * вводятся через Scanner.В случае неверного ввода выводится сообщение.
      */
-    public static void stepOutput() {
+
+    public static String stepOutput() {
         int max;
         int min;
         int step;
+        String wrong = "wrong input";
+        String result = "By step: ";
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter max");
         if (scanner.hasNextInt()) {
             max = scanner.nextInt();
         } else {
-            System.out.println("wrong max input");
-            return;
+            return wrong;
         }
         System.out.println("Enter min");
         if (scanner.hasNextInt()) {
             min = scanner.nextInt();
         } else {
-            System.out.println("wrong min input");
-            return;
+            return wrong;
         }
         System.out.println("Enter step");
         if (scanner.hasNextInt()) {
             step = scanner.nextInt();
         } else {
-            System.out.println("wrong step input");
-            return;
+            return wrong;
         }
         for (int i = min; i <= max; i += step) {
-            System.out.print(i + " ");
+            result += i + " ";
         }
         scanner.close();
+        return result;
     }
 
     /**
@@ -213,7 +214,9 @@ public class Loop5 {
      * Введенное число только целочисленное в случае ошибки выводится сообщение.Число преобразуется в массив и обратным
      * циклом выводятся элементы на экран
      */
-    public static void numberFlip() {
+
+    public static String numberFlip() {
+        String reversStr = "";
         System.out.println("Enter integer number");
         int number = 0;
         Scanner scanner = new Scanner(System.in);
@@ -225,9 +228,10 @@ public class Loop5 {
         String str = Integer.toString(number);
         char[] arrayOfChar = str.toCharArray();
         for (int i = arrayOfChar.length - 1; i >= 0; i--) {
-            System.out.print(arrayOfChar[i]);
+            reversStr += arrayOfChar[i];
         }
         scanner.close();
+        return reversStr;
     }
 }
 
