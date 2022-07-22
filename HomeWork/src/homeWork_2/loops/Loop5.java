@@ -1,5 +1,6 @@
 package homeWork_2.loops;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -95,32 +96,41 @@ public class Loop5 {
      * метод принимает от пользователя только целое число в случае неверного ввогда выводится сообщение об ошибки.
      * в консоль выводятся числа Фибоначи количеством введенного значения пользователем.При помощи масссива и цикла.
      */
-    public static void fibWithArray() {
+    public static void main(String[] args) {
+        System.out.println(fibWithArray());
+    }
+
+    public static String fibWithArray() {
         System.out.println("Enter integer number");
-        int number = 0;
+        String result = "Fib :";
+        int number;
         Scanner scanner = new Scanner(System.in);
         if (!scanner.hasNextInt()) {
             System.out.println("Wrong input");
         } else {
             number = scanner.nextInt();
-        }
-        System.out.println("Number = " + number);
-        if (number == 0) {
-            System.out.println("0");
-        } else if (number == 1) {
-            System.out.println("1");
-        } else {
-            long[] arrayFib = new long[number + 2];
-            arrayFib[0] = 0;
-            arrayFib[1] = 1;
-            for (int j = 2; j <= arrayFib.length - 1; j++) {
-                arrayFib[j] = arrayFib[j - 1] + arrayFib[j - 2];
-                System.out.print(arrayFib[j] + " ");
+            if (number < 0) {
+                System.out.println("Wrong input number < 0");
+                return result;
             }
-            scanner.close();
+            System.out.println("Number = " + number);
+            if (number == 0) {
+                return result;
+            } else if (number == 1) {
+                return result + number;
+            } else {
+                long[] arrayFib = new long[number];
+                arrayFib[0] = 1;
+                arrayFib[1] = 2;
+                for (int j = 2; j <= arrayFib.length - 1; j++) {
+                    arrayFib[j] = arrayFib[j - 1] + arrayFib[j - 2];
+                }
+                scanner.close();
+                result += Arrays.toString(arrayFib);
+            }
         }
+        return result;
     }
-
 
     /**
      * метод принимает от пользователя только целое число в случае неверного ввогда выводится сообщение об ошибки.
