@@ -76,7 +76,6 @@ public class ArraysIteration {
      * Метод печатает массив в обратном порядке при помощи
      * do....while, while, for, foreach.
      */
-    git
     public static void printReverse() {
         int[] array = ArraysUtils.arrayFromConsole();
         //do while
