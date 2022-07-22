@@ -33,28 +33,26 @@ public class Array4 {
      * Метод выводит элементы массива, которые меньше среднего арифметического
      */
 
-    public static void printItemsBelowAverage(int[] array) {
+    public static String printItemsBelowAverage(int[] array) {
         int summa = 0;
         int average;
-        StringBuilder result = new StringBuilder();
+        String result = "";
         for (int num : array) {
             summa += num;
         }
         average = summa / array.length;
         for (int num : array) {
             if (num < average) {
-                result.append(num).append(" ");
+                result += num + " ";
             }
         }
-        System.out.println("Average = " + average);
-        System.out.println("Items below average is : ");
-        System.out.println(result);
+        return result;
     }
 
     /**
      * Метод  выводит два  наименьших (минимальных) элемента массива
      */
-    public static void printTwoMinInArray(int[] array) {
+    public static int[] printTwoMinInArray(int[] array) {
         int maxOne = Integer.MIN_VALUE;
         int maxTwo = Integer.MIN_VALUE;
         for (int nb : array) {
@@ -65,8 +63,7 @@ public class Array4 {
                 maxTwo = nb;
             }
         }
-        System.out.println("Max first = " + maxOne);
-        System.out.println("Max second = " + maxTwo);
+        return new int[]{maxOne, maxTwo};
     }
 
     /**
