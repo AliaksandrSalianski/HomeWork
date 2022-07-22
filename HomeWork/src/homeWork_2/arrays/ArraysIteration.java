@@ -3,8 +3,8 @@ package homeWork_2.arrays;
 
 import homeWork_2.utils.ArraysUtils;
 
-public class Array2ArraysIteration {
-    /**
+public class ArraysIteration {
+    /**пше
      * Метод печатает все элементы массива при помощи
      * do....while, while, for, foreach.
      */
