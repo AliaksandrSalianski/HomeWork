@@ -6,10 +6,6 @@ public class Loop1 {
      * в случае переполнения выводится сообщение со значением до переполнения и при переполненнии
      * Используется только цикл
      */
-    public static void main(String[] args) {
-        System.out.println(multiplyWithCycle(27));
-    }
-
     public static String multiplyWithCycle(int number) {
         StringBuilder str = new StringBuilder();
         long result = 1;
