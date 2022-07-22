@@ -96,9 +96,6 @@ public class Loop5 {
      * метод принимает от пользователя только целое число в случае неверного ввогда выводится сообщение об ошибки.
      * в консоль выводятся числа Фибоначи количеством введенного значения пользователем.При помощи масссива и цикла.
      */
-    public static void main(String[] args) {
-        System.out.println(fibWithArray());
-    }
 
     public static String fibWithArray() {
         System.out.println("Enter integer number");
@@ -136,7 +133,11 @@ public class Loop5 {
      * метод принимает от пользователя только целое число в случае неверного ввогда выводится сообщение об ошибки.
      * в консоль выводятся числа Фибоначи количеством введенного значения пользователем. При помощи только цикла.
      */
-    public static void fibWithFor() {
+    public static void main(String[] args) {
+        System.out.println(fibWithFor());
+    }
+    public static String fibWithFor() {
+        String result = "Fib :";
         int number = 0;
         System.out.println("Enter integer number");
         Scanner scanner = new Scanner(System.in);
@@ -144,19 +145,30 @@ public class Loop5 {
             System.out.println("Wrong input");
         } else {
             number = scanner.nextInt();
+            if (number < 0) {
+                System.out.println("Wrong input number < 0 ");
+                return result;
+            }
             System.out.println("Number = " + number);
-            int numberOne = 1;
+            int numberOne = 0;
             int numberTwo = 1;
             int helper = 0;
-            System.out.print(numberTwo + " ");
-            for (int i = 0; i < (number - 1); i++) {
-                helper = numberTwo + numberOne;
-                numberOne = numberTwo;
-                numberTwo = helper;
-                System.out.print(helper + " ");
+            switch (number) {
+                case (0):
+                    return result ;
+                case (1):
+                    return result + number;
+                default:
+                    for (int i = 0; i < (number); i++) {
+                        helper = numberTwo + numberOne;
+                        numberOne = numberTwo;
+                        numberTwo = helper;
+                        result += helper +" ";
+                    }
             }
             scanner.close();
         }
+        return result;
     }
 
     /**
