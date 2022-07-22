@@ -1,20 +1,14 @@
 package homeWork_2.utils;
 
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Array1ArraysUtils {
+public class ArraysUtils {
     /**
      * Данный метод размер массива и каждый его элемент запрашивает у пользователя через консоль.
      * Если вводится не целочисленное число выводиься сообщение и возвращается массив зопалненный нулями с позиции
      * где ввелось неверное значение
      */
-    public static void main(String[] args) {
-        int[] container = arrayFromConsole();
-        int[] container2 = arrayRandom(5, 100);
-    }
-
     public static int[] arrayFromConsole() {
         int size;
         int[] array;
