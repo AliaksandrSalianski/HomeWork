@@ -34,6 +34,7 @@ public class Loop1 {
      * Перемножить числа от 1 до числа (включительно) введенного через аргумент к исполняемой программе.
      * Используя рекурсию
      */
+    // not print =result
     public static long multiplyWithRecursion(int number) {
         long result = 1;
         if (number < 0) {
@@ -42,20 +43,9 @@ public class Loop1 {
         if (number < 1) {
             return result;
         }
-        if (result < 0) {
-            System.out.println("");
-            System.out.print(" overflow");
-            System.out.println(" in number =" + number);
-            return result;
-        }
         result = number * multiplyWithRecursion(number - 1);
         System.out.print(number + "*");
         return result;
-
-    }
-
-    public static void main(String[] args) {
-        multiplyWithRecursion(10);
     }
 }
 
