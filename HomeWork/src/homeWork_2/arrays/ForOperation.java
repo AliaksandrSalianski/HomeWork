@@ -1,5 +1,11 @@
 package homeWork_2.arrays;
-
+/**
+ * класс реализуе интерфейс IArrayOperation
+ * реализует методы при помощи цикла For
+ * метод printAllElements - печатает все элементы массива передонного в параметры
+ * метод printEverySecond - печатает каждый второй элемент массива передонного в параметры
+ * метод printReverse - печатает элементы массива передонного в параметры в обратном порядке
+ */
 public class ForOperation implements IArrayOperation {
     @Override
     public void printAllElements(int[] array) {
