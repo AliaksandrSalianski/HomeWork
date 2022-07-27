@@ -1,9 +1,11 @@
 package homeWork_3.calcs.simple;
 
+import homeWork_3.calcs.api.ICalculator;
+
 /**
  * в классе содержаться методы основных математических операций
  */
-public class CalculatorWithMathCopy {
+public class CalculatorWithMathCopy implements ICalculator {
 
     /**
      * метод сложения

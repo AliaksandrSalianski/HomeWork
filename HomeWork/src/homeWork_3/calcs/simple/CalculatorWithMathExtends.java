@@ -1,11 +1,13 @@
 package homeWork_3.calcs.simple;
 
+import homeWork_3.calcs.api.ICalculator;
+
 /**
  * Класс является наследником класса CalculatorWithOperator.
  * в классе содержатся методы основных математических операций.
  *  Методы giveRoot,giveDegree,giveModule переопределены.
  */
-public class CalculatorWithMathExtends extends CalculatorWithOperator {
+public class CalculatorWithMathExtends extends CalculatorWithOperator implements ICalculator {
     /**
      *
      * @param oneNumber первый операнд
