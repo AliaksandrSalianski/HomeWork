@@ -11,10 +11,17 @@ import homeWork_3.calcs.simple.CalculatorWithMathExtends;
 public class CalculatorWithCounterClassic extends CalculatorWithMathExtends {
     private long count = 0;
 
+    /**
+     *
+     */
     public void incrementCountOperation() {
         count++;
     }
 
+    /**
+     *
+     * @return
+     */
     public long getCountOperation() {
         return count;
     }
