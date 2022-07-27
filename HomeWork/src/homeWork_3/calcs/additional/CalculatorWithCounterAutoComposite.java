@@ -16,16 +16,42 @@ public class CalculatorWithCounterAutoComposite {
         return count;
     }
 
-    public long getCount() {
-        return count;
-    }
-
     public CalculatorWithCounterAutoComposite() {
         this.calculator = new CalculatorWithCounterAutoSuper();
     }
 
-    public CalculatorWithCounterAutoSuper getCalculator() {
+    public double giveSumma(double oneNumber, double twoNumber) {
         incrementCountOperation();
-        return calculator;
+        return calculator.giveSumma(oneNumber, twoNumber);
+    }
+
+    public double giveMinus(double oneNumber, double twoNumber) {
+        incrementCountOperation();
+        return calculator.giveMinus(oneNumber, twoNumber);
+    }
+
+    public double giveMultiply(double oneNumber, double twoNumber) {
+        incrementCountOperation();
+        return calculator.giveMultiply(oneNumber, twoNumber);
+    }
+
+    public double giveDivision(double oneNumber, double twoNumber) {
+        incrementCountOperation();
+        return calculator.giveDivision(oneNumber, twoNumber);
+    }
+
+    public double giveRoot(double oneNumber) {
+        incrementCountOperation();
+        return calculator.giveRoot(oneNumber);
+    }
+
+    public double giveDegree(double oneNumber, int twoNumber) {
+        incrementCountOperation();
+        return calculator.giveDegree(oneNumber, twoNumber);
+    }
+
+    public double giveModule(double oneNumber) {
+        incrementCountOperation();
+        return calculator.giveModule(oneNumber);
     }
 }
