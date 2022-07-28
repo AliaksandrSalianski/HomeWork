@@ -1,9 +1,11 @@
 package homeWork_3.calcs.additional;
 
-import homeWork_3.calcs.simple.CalculatorWithMathCopy;
-
 /**
- *
+ * класс реализует принцип Агрегаци с классом CalculatorWithCounterAutoSuper
+ * содержит поле calculator типа CalculatorWithCounterAutoSuper
+ * содержит поле count
+ * метод incrementCountOperation() увеличивающий count на 1 при вызове
+ * метод getCountOperation() возвращает значение count
  */
 //8
 public class CalculatorWithCounterAutoAgregation {
@@ -11,21 +13,7 @@ public class CalculatorWithCounterAutoAgregation {
     private long count;
 
     /**
-     *
-     */
-    private void incrementCountOperation() {
-        count++;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public long getCountOperation() {
-        return count;
-    }
-
-    /**
+     * Конструктор в который передается обьект класса CalculatorWithCounterAutoSuper
      *
      * @param calculator
      */
@@ -34,10 +22,28 @@ public class CalculatorWithCounterAutoAgregation {
     }
 
     /**
+     * Метод считает колчество использования калькулятоа
+     */
+    private void incrementCountOperation() {
+        count++;
+    }
+
+    /**
+     * Метод возвращает количество использование калькулятора
      *
-     * @param oneNumber
-     * @param twoNumber
-     * @return
+     * @return значение count
+     */
+    public long getCountOperation() {
+        return count;
+    }
+
+    /**
+     * метод сложения
+     * метод вызван у обькта  класса CalculatorWithCounterAutoSuper
+     *
+     * @param oneNumber первый операнд
+     * @param twoNumber второй операнд
+     * @return возврощает сумму oneNumber и twoNumber
      */
     public double giveSumma(double oneNumber, double twoNumber) {
         incrementCountOperation();
@@ -45,10 +51,12 @@ public class CalculatorWithCounterAutoAgregation {
     }
 
     /**
+     * метод вычитания
+     * метод вызван у обькта  класса CalculatorWithCounterAutoSuper
      *
-     * @param oneNumber
-     * @param twoNumber
-     * @return
+     * @param oneNumber первый операнд
+     * @param twoNumber второй операнд
+     * @return возрвщает разность oneNumber и twoNumber
      */
     public double giveMinus(double oneNumber, double twoNumber) {
         incrementCountOperation();
@@ -56,10 +64,12 @@ public class CalculatorWithCounterAutoAgregation {
     }
 
     /**
+     * метод умножения
+     * метод вызван у обькта  класса CalculatorWithCounterAutoSuper
      *
-     * @param oneNumber
-     * @param twoNumber
-     * @return
+     * @param oneNumber первый операнд
+     * @param twoNumber второй операнд
+     * @return возврощает произведение oneNumber и twoNumber
      */
     public double giveMultiply(double oneNumber, double twoNumber) {
         incrementCountOperation();
@@ -67,10 +77,12 @@ public class CalculatorWithCounterAutoAgregation {
     }
 
     /**
+     * метод деления
+     * метод  вызван у обькта  класса CalculatorWithCounterAutoSuper
      *
-     * @param oneNumber
-     * @param twoNumber
-     * @return
+     * @param oneNumber первый операнд
+     * @param twoNumber второй операнд
+     * @return возвращает результат деления oneNumber на twoNumber
      */
     public double giveDivision(double oneNumber, double twoNumber) {
         incrementCountOperation();
@@ -78,9 +90,11 @@ public class CalculatorWithCounterAutoAgregation {
     }
 
     /**
+     * метод квадратного корня
+     * метод вызван у обькта  класса CalculatorWithCounterAutoSuper
      *
      * @param oneNumber
-     * @return
+     * @return возвращает корень oneNumber
      */
     public double giveRoot(double oneNumber) {
         incrementCountOperation();
@@ -88,10 +102,12 @@ public class CalculatorWithCounterAutoAgregation {
     }
 
     /**
+     * метод возведения в степень
+     * метод вызван у обькта  класса CalculatorWithCounterAutoSuper
      *
-     * @param oneNumber
-     * @param twoNumber
-     * @return
+     * @param oneNumber первый операнд
+     * @param twoNumber второй операнд
+     * @return возвращает возведение oneNumber в степень twoNumber
      */
     public double giveDegree(double oneNumber, int twoNumber) {
         incrementCountOperation();
@@ -99,9 +115,11 @@ public class CalculatorWithCounterAutoAgregation {
     }
 
     /**
+     * метод модуля числа
+     * метод вызван у обькта  класса CalculatorWithCounterAutoSuper
      *
      * @param oneNumber
-     * @return
+     * @return возвращает модуль oneNumber
      */
     public double giveModule(double oneNumber) {
         incrementCountOperation();

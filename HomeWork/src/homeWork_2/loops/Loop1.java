@@ -47,5 +47,9 @@ public class Loop1 {
         System.out.print(number + "*");
         return result;
     }
+
+    public static void main(String[] args) {
+        multiplyWithRecursion(10);
+    }
 }
 

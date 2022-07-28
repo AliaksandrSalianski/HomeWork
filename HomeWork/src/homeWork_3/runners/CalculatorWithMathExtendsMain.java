@@ -4,8 +4,8 @@ import homeWork_3.calcs.simple.CalculatorWithMathExtends;
 import homeWork_3.calcs.simple.CalculatorWithOperator;
 
 /**
- * В клаасе создан обьект класса CalculatorWithOperator
- * при помощи обькта calMathExtends и методов класса высчитывается значение выражения и результат выводится в консоль
+ * В классе высчитывается значение выражение при помощи экзепляра класса CalculatorWithOperator и его методов.
+ * В консоль выводится результат.
  */
 public class CalculatorWithMathExtendsMain {
     public static void main(String[] args) {

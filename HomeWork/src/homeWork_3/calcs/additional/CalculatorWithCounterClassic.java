@@ -12,15 +12,15 @@ public class CalculatorWithCounterClassic extends CalculatorWithMathExtends {
     private long count = 0;
 
     /**
-     *
+     *Метод считает колчество использования калькулятоа
      */
     public void incrementCountOperation() {
         count++;
     }
 
     /**
-     *
-     * @return
+     *Метод возвращает количество использование калькулятора
+     * @return значение count
      */
     public long getCountOperation() {
         return count;

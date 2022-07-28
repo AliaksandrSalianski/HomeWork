@@ -1,60 +1,60 @@
 package homeWork_3.calcs.api;
 
 /**
- *
+ *интерфейс содержит методы  осмновных математических операций
  */
 public interface ICalculator {
     /**
-     *
-     * @param one
-     * @param two
-     * @return
+     * метод сложения
+     * @param one первый операнд
+     * @param two второй операнд
+     * @return возврощает сумму oneNumber и twoNumber
      */
     double giveSumma(double one , double two);
 
     /**
-     *
-     * @param one
-     * @param two
-     * @return
+     * метод вычитания
+     * @param one первый операнд
+     * @param two второй операнд
+     * @return возрвщает разность oneNumber и twoNumber
      */
     double giveMinus(double one , double two);
 
     /**
-     *
-     * @param one
-     * @param two
-     * @return
+     * метод умножения
+     * @param one первый операнд
+     * @param two второй операнд
+     * @return возврощает произведение oneNumber и twoNumber
      */
     double giveMultiply(double one , double two);
 
     /**
-     *
-     * @param one
-     * @param two
-     * @return
+     * метод деления
+     * @param one первый операнд
+     * @param two второй операнд
+     * @return вооооозвращает результат деления oneNumber на twoNumber
      */
     double giveDivision(double one , double two);
 
     /**
-     *
+     * метод квадратного кореня
      * @param one
-     * @return
+     * @return возвращает корень oneNumber
      */
     double giveRoot(double one);
 
     /**
-     *
-     * @param one
-     * @param two
-     * @return
+     * метод возведения в степень
+     * @param one число возводимое в степень
+     * @param two степень числа
+     * @return возвращает возведение oneNumber в степень twoNumber
      */
     double giveDegree(double one,int two);
 
     /**
-     *
+     * метод модуля числа
      * @param one
-     * @return
+     * @return возвращает модуль oneNumber
      */
     double giveModule(double one);
 }

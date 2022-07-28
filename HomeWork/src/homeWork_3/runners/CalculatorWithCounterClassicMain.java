@@ -3,9 +3,9 @@ package homeWork_3.runners;
 import homeWork_3.calcs.additional.CalculatorWithCounterClassic;
 
 /**
- *  В клаасе создан обьект класса CalculatorWithCounterClassic
- *  при помощи обькта calWithCounter и методов высчитывается значение выражения и результат выводится в консоль
- *  метод incrementCountOperation() считает количетво вызовов
+ * В классе высчитывается значение выражение при помощи экзепляра класса CalculatorWithCounterClassic и его методов.
+ * В консоль выводится результат и количество вызова калькулятора
+ * incrementCountOperation() считает количетво вызовов калькулятора
  */
 public class CalculatorWithCounterClassicMain {
     public static void main(String[] args) {

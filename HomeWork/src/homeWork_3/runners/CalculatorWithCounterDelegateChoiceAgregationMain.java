@@ -6,7 +6,10 @@ import homeWork_3.calcs.simple.CalculatorWithMathExtends;
 import homeWork_3.calcs.simple.CalculatorWithOperator;
 
 /**
- *
+ * В классе высчитывается значение выражение при помощи трех экзепляров класса CalculatorWithCounterAutoChoiceAggregation используя три разных конструктора
+ * в параметры которого предались обькты классов:CalculatorWithOperator, CalculatorWithMathCopy, CalculatorWithMathExtends
+ * В консоль выводится результат и количество вызова калькулятора.
+ * Добавлен метод print
  */
 public class CalculatorWithCounterDelegateChoiceAgregationMain {
     public static void main(String[] args) {
@@ -19,36 +22,30 @@ public class CalculatorWithCounterDelegateChoiceAgregationMain {
         CalculatorWithCounterAutoChoiceAggregation calWithMatheExtends = new CalculatorWithCounterAutoChoiceAggregation(withMathExtends);
 
         System.out.println("____calWithOperator____");
-        System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2");
-        double division = calWithOperator.giveDivision(28, 5);
-        double degree = calWithOperator.giveDegree(division, 2);
-        double multi = calWithOperator.giveMultiply(15, 7);
-        double summa = calWithOperator.giveSumma(multi, 4.1);
-        double result = calWithOperator.giveSumma(summa, degree);
-        System.out.println("____");
-        System.out.println(result);
-        System.out.println("count = " + calWithOperator.getCountOperation());
+        print(calWithOperator);
 
         System.out.println("____calWithMathCopy____");
-        System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2");
-        division = calWithMathCopy.giveDivision(28, 5);
-        degree = calWithMathCopy.giveDegree(division, 2);
-        multi = calWithMathCopy.giveMultiply(15, 7);
-        summa = calWithMathCopy.giveSumma(multi, 4.1);
-        result = calWithMathCopy.giveSumma(summa, degree);
-        System.out.println("____");
-        System.out.println(result);
-        System.out.println("count = " + calWithOperator.getCountOperation());
+        print(calWithMathCopy);
 
         System.out.println("____calWithMatheExtends____");
+        print(calWithMatheExtends);
+    }
+
+    /**
+     * метод принимавет обьекты сласса CalculatorWithCounterAutoChoiceAggregation
+     * и печатет результат вычисления в консоль
+     * @param p
+     */
+    public static void print(CalculatorWithCounterAutoChoiceAggregation p) {
         System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2");
-        division = calWithMatheExtends.giveDivision(28, 5);
-        degree = calWithMatheExtends.giveDegree(division, 2);
-        multi = calWithMatheExtends.giveMultiply(15, 7);
-        summa = calWithMatheExtends.giveSumma(multi, 4.1);
-        result = calWithMatheExtends.giveSumma(summa, degree);
-        System.out.println("____");
-        System.out.println(result);
-        System.out.println("count = " + calWithOperator.getCountOperation());
+        double division = p.giveDivision(28, 5);
+        double degree = p.giveDegree(division, 2);
+        double multi = p.giveMultiply(15, 7);
+        double summa = p.giveSumma(multi, 4.1);
+        double result = p.giveSumma(summa, degree);
+        System.out.println("Result = "+result);
+        System.out.println("Number of calls = " + p.getCountOperation());
+        System.out.println("");
+
     }
 }

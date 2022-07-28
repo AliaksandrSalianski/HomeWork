@@ -13,25 +13,25 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
     private long countOperation;
 
     /**
-     *
-     * @return
+     *Метод возвращает количество использование калькулятора
+     * @return значение count
      */
     public long getCountOperation() {
         return countOperation;
     }
 
     /**
-     *
+     *Метод считает колчество использования калькулятоа
      */
     private void incrementCountOperation() {
         countOperation++;
     }
 
     /**
-     *
-     * @param oneNumber
-     * @param twoNumber
-     * @return
+     * метод сложения
+     * @param oneNumber первый операнд
+     * @param twoNumber второй операнд
+     * @return возврощает сумму oneNumber и twoNumber
      */
     @Override
     public double giveSumma(double oneNumber, double twoNumber) {
@@ -40,10 +40,10 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
     }
 
     /**
-     *
-     * @param oneNumber
-     * @param twoNumber
-     * @return
+     * метод вычитания
+     * @param oneNumber первый операнд
+     * @param twoNumber второй операнд
+     * @return возрвщает разность oneNumber и twoNumber
      */
     @Override
     public double giveMinus(double oneNumber, double twoNumber) {
@@ -52,10 +52,10 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
     }
 
     /**
-     *
-     * @param oneNumber
-     * @param twoNumber
-     * @return
+     * метод умножения
+     * @param oneNumber первый операнд
+     * @param twoNumber второй операнд
+     * @return возврощает произведение oneNumber и twoNumber
      */
     @Override
     public double giveMultiply(double oneNumber, double twoNumber) {
@@ -64,10 +64,10 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
     }
 
     /**
-     *
-     * @param oneNumber
-     * @param twoNumber
-     * @return
+     * метод деления
+     * @param oneNumber первый операнд
+     * @param twoNumber второй операнд
+     * @return вооооозвращает результат деления oneNumber на twoNumber
      */
     @Override
     public double giveDivision(double oneNumber, double twoNumber) {
@@ -76,9 +76,9 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
     }
 
     /**
-     *
+     * метод квадратного кореня
      * @param oneNumber
-     * @return
+     * @return возвращает корень oneNumber
      */
     @Override
     public double giveRoot(double oneNumber) {
@@ -87,10 +87,10 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
     }
 
     /**
-     *
-     * @param oneNumber
-     * @param twoNumber
-     * @return
+     * метод возведения в степень
+     * @param oneNumber первый операнд
+     * @param twoNumber второй операнд
+     * @return возвращает возведение oneNumber в степень twoNumber
      */
     @Override
     public double giveDegree(double oneNumber, int twoNumber) {
@@ -99,9 +99,9 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
     }
 
     /**
-     *
+     * метод модуля числа
      * @param oneNumber
-     * @return
+     * @return возвращает модуль oneNumber
      */
     @Override
     public double giveModule(double oneNumber) {

@@ -3,8 +3,8 @@ package homeWork_3.runners;
 import homeWork_3.calcs.additional.CalculatorWithCounterAutoSuper;
 
 /**
- * класс печатет результат вычисления выражения и количетсво вызовов калькулятора
- *
+ * В классе высчитывается значение выражение при помощи экзепляра класса CalculatorWithCounterAutoSuper  и его методов.
+ * В консоль выводится результат и количество вызова калькулятора
  */
 public class CalculatorWithCounterAutoSuperMain {
     public static void main(String[] args) {

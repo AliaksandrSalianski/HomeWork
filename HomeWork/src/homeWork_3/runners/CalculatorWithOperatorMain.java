@@ -3,8 +3,8 @@ package homeWork_3.runners;
 import homeWork_3.calcs.simple.CalculatorWithOperator;
 
 /**
- * В клаасе создан обьект класса CalculatorWithOperator
- * при помощи обькта calOne и методов высчитывается значение выражения и результат выводится в консоль
+ * В классе высчитывается значение выражения при помощи экзепляра класса CalculatorWithOperator и его методов.
+ * В консоль выводится результат
  *
  */
 public class CalculatorWithOperatorMain {

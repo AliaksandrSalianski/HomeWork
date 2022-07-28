@@ -3,8 +3,8 @@ package homeWork_3.runners;
 import homeWork_3.calcs.simple.CalculatorWithMathCopy;
 
 /**
- * В клаасе создан обьект класса CalculatorWithMathCopy
- * при помощи обькта calMathCop и методов высчитывается значение выражения и результат выводится в консоль
+ * В классе высчитывается значение выражение при помощи экзепляра класса CalculatorWithMathCopy  и его методов.
+ * В консоль выводится результат.
  */
 public class CalculatorWithMathCopyMain {
     public static void main(String[] args) {

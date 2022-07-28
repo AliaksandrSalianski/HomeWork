@@ -3,9 +3,10 @@ package homeWork_3.runners;
 import homeWork_3.calcs.additional.CalculatorWithCounterAutoComposite;
 
 /**
- *
+ * В классе высчитывается значение выражение при помощи экзепляра класса CalculatorWithCounterAutoComposite  и его методов.
+ * В консоль выводится результат и количество вызовакалькулятора
  */
-//
+
 public class CalculatorWithCounterDelegateCompositeMain {
     public static void main(String[] args) {
         CalculatorWithCounterAutoComposite calculator = new CalculatorWithCounterAutoComposite();

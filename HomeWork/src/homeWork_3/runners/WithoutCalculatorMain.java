@@ -1,7 +1,8 @@
 package homeWork_3.runners;
 
 /**
- * печатает значение выражения.
+ * В классе высчитывается значение выражения
+ * В консоль выводится результат
  */
 public class WithoutCalculatorMain {
     public static void main(String[] args) {

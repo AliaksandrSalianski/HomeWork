@@ -4,9 +4,10 @@ import homeWork_3.calcs.additional.CalculatorWithCounterAutoAgregation;
 import homeWork_3.calcs.additional.CalculatorWithCounterAutoSuper;
 
 /**
- *
+ * В классе высчитывается значение выражение при помощи экзепляра класса CalculatorWithCounterAutoSuper  и его методов.
+ * В консоль выводится результат и количество вызова калькулятора
  */
-//8
+
 public class CalculatorWithCounterDelegateAgregationMain {
     public static void main(String[] args) {
         CalculatorWithCounterAutoSuper calculatorWork = new CalculatorWithCounterAutoSuper();

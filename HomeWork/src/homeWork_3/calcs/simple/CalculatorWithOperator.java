@@ -3,14 +3,16 @@ package homeWork_3.calcs.simple;
 import homeWork_3.calcs.api.ICalculator;
 
 /**
- * в классе представлены методы основных математических операций
+ * в классе представлены методы основных математических операций:
+ * сложение,вычитание,умноженение,деление,корень числа,возведение в степень,модуль числа
+ * класс реализует интерфейс ICalculator
  */
 public class CalculatorWithOperator implements ICalculator {
     /**
      * метод сложения
      * @param oneNumber первый операнд
      * @param twoNumber второй операнд
-     * @return возврощает сумму параметров метода
+     * @return возврощает сумму oneNumber и twoNumber
      */
     public double giveSumma(double oneNumber, double twoNumber) {
         return twoNumber + oneNumber;
@@ -31,7 +33,7 @@ public class CalculatorWithOperator implements ICalculator {
      * метод умножения
      * @param oneNumber первый операнд
      * @param twoNumber второй операнд
-     * @return возврощает произведение параметров метода
+     * @return возврощает произведение oneNumber и twoNumber
      */
     public double giveMultiply(double oneNumber, double twoNumber) {
 
@@ -40,8 +42,8 @@ public class CalculatorWithOperator implements ICalculator {
 
     /**
      * метод деления
-     * @param oneNumber
-     * @param twoNumber
+     * @param oneNumber первый операнд
+     * @param twoNumber второй операнд
      * @return вооооозвращает результат деления oneNumber на twoNumber
      */
     public double giveDivision(double oneNumber, double twoNumber) {
@@ -51,7 +53,7 @@ public class CalculatorWithOperator implements ICalculator {
     /**
      * метод квадратного кореня
      * @param oneNumber
-     * @return возвращает корень числа
+     * @return возвращает корень oneNumber
      */
     public double giveRoot(double oneNumber) {
 

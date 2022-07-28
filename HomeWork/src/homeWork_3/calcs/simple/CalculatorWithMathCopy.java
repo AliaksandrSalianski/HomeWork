@@ -3,13 +3,14 @@ package homeWork_3.calcs.simple;
 import homeWork_3.calcs.api.ICalculator;
 
 /**
- * в классе содержаться методы основных математических операций
+ * Класс  реализует интерфейс ICalculator
+ * в классе содержатся методы основных математических операций.
+ * сложение,вычитание,умноженение,деление,корень числа,возведение в степень,модуль числа
  */
 public class CalculatorWithMathCopy implements ICalculator {
 
     /**
      * метод сложения
-     *
      * @param oneNumber первый операнд
      * @param twoNumber второй операнд
      * @return возврощает сумму параметров метода
@@ -20,7 +21,6 @@ public class CalculatorWithMathCopy implements ICalculator {
 
     /**
      * метод вычитания
-     *
      * @param oneNumber первый операнд
      * @param twoNumber второй операнд
      * @return возрвщает разность oneNumber и twoNumber
@@ -31,8 +31,7 @@ public class CalculatorWithMathCopy implements ICalculator {
     }
 
     /**
-     * метд умножения
-     *
+     * метод умножения
      * @param oneNumber первый операнд
      * @param twoNumber второй операнд
      * @return возврощает произведение параметров метода
@@ -44,7 +43,6 @@ public class CalculatorWithMathCopy implements ICalculator {
 
     /**
      * метод деления
-     *
      * @param oneNumber первый операнд
      * @param twoNumber второй операнд
      * @return вооооозвращает результат деления oneNumber на twoNumber
@@ -56,7 +54,6 @@ public class CalculatorWithMathCopy implements ICalculator {
 
     /**
      * метод квадратного кореня
-     *
      * @param oneNumber
      * @return возвращает корень числа
      */
@@ -67,7 +64,6 @@ public class CalculatorWithMathCopy implements ICalculator {
 
     /**
      * метод возведения в степень
-     *
      * @param oneNumber число возводимое в степень
      * @param twoNumber степень числа
      * @return возвращает возведение oneNumber в степень twoNumber
@@ -79,7 +75,6 @@ public class CalculatorWithMathCopy implements ICalculator {
 
     /**
      * метод модуля числа
-     *
      * @param oneNumber
      * @return возвращает модуль oneNumber
      */
