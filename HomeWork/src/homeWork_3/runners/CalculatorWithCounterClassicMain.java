@@ -1,6 +1,7 @@
 package homeWork_3.runners;
 
 import homeWork_3.calcs.additional.CalculatorWithCounterClassic;
+import homeWork_3.calcs.simple.Print;
 
 /**
  * В классе высчитывается значение выражение при помощи экзепляра класса CalculatorWithCounterClassic и его методов.
@@ -24,5 +25,6 @@ public class CalculatorWithCounterClassicMain {
         System.out.println("_____");
         System.out.println(result);
         System.out.println("count = "+ calWithCounter.getCountOperation());
+        Print.printWithICalculator(calWithCounter);
     }
 }

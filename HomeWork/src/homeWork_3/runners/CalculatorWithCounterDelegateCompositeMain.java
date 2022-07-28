@@ -19,5 +19,6 @@ public class CalculatorWithCounterDelegateCompositeMain {
         System.out.println("_____");
         System.out.println(result);
         System.out.println("count = " + calculator.getCountOperation());
+
     }
 }
