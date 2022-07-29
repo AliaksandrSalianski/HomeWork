@@ -6,7 +6,7 @@ import homeWork_3.calcs.api.ICalculator;
 public class Print {
     /**
      * метод принимавет обьекты сласса CalculatorWithCounterAutoChoiceAggregation
-     * и выводит результат вычисления в консоль
+     * и выводит результат вычисления в консоль и количество вызовов калькулятора
      * @param p
      */
     public static void printAutoChoiceAggregation(CalculatorWithCounterAutoChoiceAggregation p) {

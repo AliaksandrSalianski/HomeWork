@@ -11,6 +11,7 @@ Task2      2    | Loop 4          1.4  | CalculatorWithCounterAutoChoiceAggregat
 Task3      2    | Loop 5          1.5. | CalculatorWithCounterAutoComposite                7  |
 Task4Part1 4.1  | Loop 6          1.6. | CalculatorWithCounterAutoSuper                    6  |
 Task4Part2 4.2  |package:array         | CalculatorWithCounterClassic                      5  |
+                                         CalculatorWithMemory                              12
 Task4Part3 4.3  | Array 4         2.4  |   package: api                                       |
 Task4Part4 4.4  |ArraysIteration  2.2  |           ICalculator                             10 |
 Task4Part5 4.5  |IArrayOperation  2.3  |   package: simple                                    |
@@ -28,3 +29,4 @@ Task7      7    |                      | CalculatorWithMathCopyMain             
 Task8      8.   |                      | CalculatorWithMathExtendsMain                     4.4|
 ________________|______________________| CalculatorWithOperatorMain                        2.5|
                                        | WithoutCalculatorMain                             1  |
+                                         CalculatorWithMemoryMain                         12.7

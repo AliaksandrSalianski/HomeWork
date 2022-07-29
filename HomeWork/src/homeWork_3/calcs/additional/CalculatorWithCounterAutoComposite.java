@@ -10,10 +10,18 @@ package homeWork_3.calcs.additional;
 
 public class CalculatorWithCounterAutoComposite {
     private final CalculatorWithCounterAutoSuper calculator;
+
+    /**
+     * Коструктор в котором создается обьект класса CalculatorWithCounterAutoSuper
+     */
+    public CalculatorWithCounterAutoComposite() {
+        this.calculator = new CalculatorWithCounterAutoSuper();
+    }
+
     private long count = 0;
 
     /**
-     * Метод считает колчество использования калькулятоа
+     * Метод считает количество использования калькулятоа
      */
     private void incrementCountOperation() {
         count++;
@@ -26,13 +34,6 @@ public class CalculatorWithCounterAutoComposite {
      */
     public long getCountOperation() {
         return count;
-    }
-
-    /**
-     * Коструктор в котором создается обьект класса CalculatorWithCounterAutoSuper
-     */
-    public CalculatorWithCounterAutoComposite() {
-        this.calculator = new CalculatorWithCounterAutoSuper();
     }
 
     /**

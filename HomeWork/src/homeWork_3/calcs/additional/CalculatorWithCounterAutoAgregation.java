@@ -3,7 +3,7 @@ package homeWork_3.calcs.additional;
 /**
  * класс реализует принцип Агрегаци с классом CalculatorWithCounterAutoSuper
  * содержит поле calculator типа CalculatorWithCounterAutoSuper
- * содержит поле count
+ * содержит поле count хронящее количество вызовов калькулятора
  * метод incrementCountOperation() увеличивающий count на 1 при вызове
  * метод getCountOperation() возвращает значение count
  */

@@ -4,7 +4,7 @@ import homeWork_3.calcs.simple.CalculatorWithMathExtends;
 
 /**
  * класс является наследником класса CalculatorWithMathExtends
- * содержит поле count
+ * содержит поле count хронящее количество вызовов калькулятора
  * метод incrementCountOperation() увеличивающий count на 1 при вызове
  * метод getCountOperation() возвращает значение count
  * методы родительского класса переопределены добавлен подсчет вызова калькулятора
