@@ -21,7 +21,7 @@ public class CalculatorWithMemory implements ICalculator {
     /**
      * конструктор принимающий обьект ICalculator
      *
-     * @param iCalculator
+     * @param iCalculator параметр конструктора
      */
     public CalculatorWithMemory(ICalculator iCalculator) {
         this.iCalculator = iCalculator;
@@ -104,7 +104,7 @@ public class CalculatorWithMemory implements ICalculator {
     /**
      * метод квадратного кореня
      *
-     * @param one
+     * @param one параметр метода
      * @return возвращает корень числа
      */
     @Override
@@ -131,7 +131,7 @@ public class CalculatorWithMemory implements ICalculator {
     /**
      * метод модуля числа
      *
-     * @param one
+     * @param one параметр метода
      * @return возвращает модуль oneNumber
      */
     @Override

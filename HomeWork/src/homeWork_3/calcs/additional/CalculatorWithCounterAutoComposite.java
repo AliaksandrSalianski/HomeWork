@@ -92,7 +92,7 @@ public class CalculatorWithCounterAutoComposite {
      * метод квадратного кореня
      * метод вызван у обькта  класса CalculatorWithCounterAutoSuper
      *
-     * @param oneNumber
+     * @param oneNumber параметр метода
      * @return возвращает корень oneNumber
      */
     public double giveRoot(double oneNumber) {
@@ -117,7 +117,7 @@ public class CalculatorWithCounterAutoComposite {
      * метод модуля числа
      * метод вызван у обькта  класса CalculatorWithCounterAutoSuper
      *
-     * @param oneNumber
+     * @param oneNumber параметр метода
      * @return возвращает модуль oneNumber
      */
     public double giveModule(double oneNumber) {

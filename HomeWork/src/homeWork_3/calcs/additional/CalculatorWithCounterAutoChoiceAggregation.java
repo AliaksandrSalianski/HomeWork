@@ -146,7 +146,7 @@ public class CalculatorWithCounterAutoChoiceAggregation {
      * метод квадратного корня
      * метод вызван у обькта в зависимости от класа преданного в конструктор
      *
-     * @param oneNumber
+     * @param oneNumber параметр метода
      * @return возвращает корень oneNumber
      */
     public double giveRoot(double oneNumber) {
@@ -183,7 +183,7 @@ public class CalculatorWithCounterAutoChoiceAggregation {
      * метод модуля числа
      * метод вызван у обькта в зависимости от класа преданного в конструктор
      *
-     * @param oneNumber
+     * @param oneNumber параметр метода
      * @return возвращает модуль oneNumber
      */
     public double giveModule(double oneNumber) {

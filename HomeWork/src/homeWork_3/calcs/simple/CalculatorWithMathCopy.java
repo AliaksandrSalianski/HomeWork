@@ -54,7 +54,7 @@ public class CalculatorWithMathCopy implements ICalculator {
 
     /**
      * метод квадратного кореня
-     * @param oneNumber
+     * @param oneNumber параметр метода
      * @return возвращает корень числа
      */
     public double giveRoot(double oneNumber) {
@@ -75,7 +75,7 @@ public class CalculatorWithMathCopy implements ICalculator {
 
     /**
      * метод модуля числа
-     * @param oneNumber
+     * @param oneNumber параметр метода
      * @return возвращает модуль oneNumber
      */
     public double giveModule(double oneNumber) {

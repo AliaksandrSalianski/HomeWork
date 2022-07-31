@@ -56,7 +56,7 @@ public class CalculatorWithMathExtends extends CalculatorWithOperator implements
 
     /**
      * метод квадратного кореня
-     * @param oneNumber
+     * @param oneNumber параметр метода
      * @return возвращает корень oneNumber
      */
     @Override
@@ -77,7 +77,7 @@ public class CalculatorWithMathExtends extends CalculatorWithOperator implements
 
     /**
      * метод модуля числа
-     * @param oneNumber
+     * @param oneNumber параметр метода
      * @return возвращает модуль oneNumber
      */
     @Override

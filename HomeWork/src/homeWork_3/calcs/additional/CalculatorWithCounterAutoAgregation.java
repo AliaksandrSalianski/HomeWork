@@ -15,7 +15,7 @@ public class CalculatorWithCounterAutoAgregation {
     /**
      * Конструктор в который передается обьект класса CalculatorWithCounterAutoSuper
      *
-     * @param calculator
+     * @param calculator параметр метода
      */
     public CalculatorWithCounterAutoAgregation(CalculatorWithCounterAutoSuper calculator) {
         this.calculator = calculator;
@@ -93,7 +93,7 @@ public class CalculatorWithCounterAutoAgregation {
      * метод квадратного корня
      * метод вызван у обькта  класса CalculatorWithCounterAutoSuper
      *
-     * @param oneNumber
+     * @param oneNumber параметр метода
      * @return возвращает корень oneNumber
      */
     public double giveRoot(double oneNumber) {
@@ -118,7 +118,7 @@ public class CalculatorWithCounterAutoAgregation {
      * метод модуля числа
      * метод вызван у обькта  класса CalculatorWithCounterAutoSuper
      *
-     * @param oneNumber
+     * @param oneNumber параметр метода
      * @return возвращает модуль oneNumber
      */
     public double giveModule(double oneNumber) {

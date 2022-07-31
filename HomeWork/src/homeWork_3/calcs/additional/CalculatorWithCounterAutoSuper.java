@@ -77,7 +77,7 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
 
     /**
      * метод квадратного кореня
-     * @param oneNumber
+     * @param oneNumber параметр метода
      * @return возвращает корень oneNumber
      */
     @Override
@@ -100,7 +100,7 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
 
     /**
      * метод модуля числа
-     * @param oneNumber
+     * @param oneNumber параметр метода
      * @return возвращает модуль oneNumber
      */
     @Override

@@ -38,7 +38,7 @@ public interface ICalculator {
 
     /**
      * метод квадратного кореня
-     * @param one
+     * @param one парметп метода
      * @return возвращает корень oneNumber
      */
     double giveRoot(double one);
@@ -53,7 +53,7 @@ public interface ICalculator {
 
     /**
      * метод модуля числа
-     * @param one
+     * @param one параметр метода
      * @return возвращает модуль oneNumber
      */
     double giveModule(double one);

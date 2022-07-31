@@ -7,7 +7,7 @@ public class Print {
     /**
      * метод принимавет обьекты сласса CalculatorWithCounterAutoChoiceAggregation
      * и выводит результат вычисления в консоль и количество вызовов калькулятора
-     * @param p
+     * @param p обьет переданный в конструктор
      */
     public static void printAutoChoiceAggregation(CalculatorWithCounterAutoChoiceAggregation p) {
         System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2");
@@ -18,12 +18,12 @@ public class Print {
         double result = p.giveSumma(summa, degree);
         System.out.println("Result = "+result);
         System.out.println("Number of calls = " + p.getCountOperation());
-        System.out.println("");
+        System.out.println(" ");
     }
 
     /**
      * Метод принимает обьекты классов которые реализуют интерфейс ICalculator и выводит в консоль результат выражения
-     * @param i
+     * @param i обьет переданный в конструктор
      */
     public static void printWithICalculator(ICalculator i) {
         System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2");

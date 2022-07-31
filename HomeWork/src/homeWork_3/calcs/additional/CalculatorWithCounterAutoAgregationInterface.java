@@ -10,13 +10,13 @@ import homeWork_3.calcs.api.ICalculator;
  * метод getCountOperation() возвращает значение count
  */
 public class CalculatorWithCounterAutoAgregationInterface implements ICalculator {
-    ICalculator iCalculator;
+    private final ICalculator iCalculator;
     private long countOperation;
 
     /**
      * Конструктор принимает в качестве параметра ICalculator
      *
-     * @param iCalculator
+     * @param iCalculator параметр метода
      */
     public CalculatorWithCounterAutoAgregationInterface(ICalculator iCalculator) {
         this.iCalculator = iCalculator;
@@ -56,9 +56,9 @@ public class CalculatorWithCounterAutoAgregationInterface implements ICalculator
      * метод вычитания
      * метод вызван  у iCalculator
      *
-     * @param oneNumber
-     * @param twoNumber
-     * @return
+     * @param oneNumber первый операнд
+     * @param twoNumber второй операнд
+     * @return возвращает разность oneNumber и oneNumber
      */
     @Override
     public double giveMinus(double oneNumber, double twoNumber) {
@@ -98,7 +98,7 @@ public class CalculatorWithCounterAutoAgregationInterface implements ICalculator
      * метод квадратного корня
      * метод вызван  у iCalculator
      *
-     * @param oneNumber
+     * @param oneNumber параметр метода
      * @return возвращает корень oneNumber
      */
     @Override
@@ -125,7 +125,7 @@ public class CalculatorWithCounterAutoAgregationInterface implements ICalculator
      * метод модуля числа
      * метод вызвану iCalculator
      *
-     * @param oneNumber
+     * @param oneNumber параметр метода
      * @return возвращает модуль oneNumber
      */
     @Override

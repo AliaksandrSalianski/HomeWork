@@ -52,7 +52,7 @@ public class CalculatorWithOperator implements ICalculator {
 
     /**
      * метод квадратного кореня
-     * @param oneNumber
+     * @param oneNumber параметр метода
      * @return возвращает корень oneNumber
      */
     public double giveRoot(double oneNumber) {
@@ -77,7 +77,7 @@ public class CalculatorWithOperator implements ICalculator {
 
     /**
      * метод модуля числа
-     * @param oneNumber
+     * @param oneNumber параметор метода
      * @return возвращает модуль oneNumber
      */
     public double giveModule(double oneNumber) {
