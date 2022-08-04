@@ -1,8 +1,6 @@
 package homeWork_4;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.Objects;
 
 public class DataContainer<T> {
     private T[] data;
@@ -16,11 +14,10 @@ public class DataContainer<T> {
         return data;
     }
 
-    public void setData(T[] data) {
-        this.data = data;
-    }
-
-    /////
+    /**
+     * @param index
+     * @return
+     */
     public T get(int index) {
         if (index > data.length || index < 0) {
             return null;
@@ -30,21 +27,26 @@ public class DataContainer<T> {
 
     }
 
-    /////
+    /**
+     * @param item
+     * @return
+     */
     public int add(T item) {
         int index = findNull();
         if (index == -1) {
-            data = increaseArray();
-            index = findNull();
-            data[index] = item;
-            return index;
+            final int flagIndex = data.length;
+            increaseArray();
+            data[flagIndex] = item;
+            return flagIndex;
         } else {
             data[index] = item;
         }
         return index;
     }
 
-    //////
+    /**
+     * @return
+     */
     private int findNull() {
         for (int i = 0; i < data.length; i++) {
             if (data[i] == null) {
@@ -58,8 +60,7 @@ public class DataContainer<T> {
      * @return
      */
     private T[] increaseArray() {
-        int lenNewArray = data.length + data.length >> 1;
-        return Arrays.copyOf(data, lenNewArray);
+        return data = Arrays.copyOf(data, data.length + data.length / 2);
     }
 
     /**
@@ -71,7 +72,8 @@ public class DataContainer<T> {
         T[] arr = (T[]) new Object[data.length - 1];
         System.arraycopy(data, 0, arr, 0, index);
         System.arraycopy(data, index + 1, arr, index, data.length - index - 1);
-        return arr;
+        data = arr;
+        return data;
     }
 
     /**
@@ -103,7 +105,6 @@ public class DataContainer<T> {
     }
 
     /**
-     *
      * @param item
      * @return
      */
