@@ -46,6 +46,7 @@ public class Loop1 {
         result = number * multiplyWithRecursion(number - 1);
         System.out.print(number + "*");
         return result;
+        
     }
 
     public static void main(String[] args) {
