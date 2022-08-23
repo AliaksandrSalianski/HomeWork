@@ -1,6 +1,10 @@
 package homeWork_5;
 
-import java.util.Random;
+import homeWork_5.dto.Animal;
+import homeWork_5.dto.Person;
+import homeWork_5.dto.SomebodyWithNick;
+
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class GenerationMethods {
@@ -13,10 +17,9 @@ public class GenerationMethods {
     private static final String NUMBER = "0123456789";
 
     private static final String[] NAMES = {"Елисей", "Пантелеймон", "Святослав", "Ростислав", "Рафаэль", "Гордей", "Адам", "Оливер", "Патрик", "Никон", "Гавриил", "Аида", "Захра"};
-    private static final String[] NICKNAMES = {"Эйс", "Аксель", "Баки", "Бруно", "Харли", "Лола", "Рокси", "Виксен", "Дарман", "Цезарь", "Одиссей", "Эмир", "Анда", "Терра", "Эльба"};
+    private static final String[] NICKS = {"Эйс", "Аксель", "Баки", "Бруно", "Харли", "Лола", "Рокси", "Виксен", "Дарман", "Цезарь", "Одиссей", "Эмир", "Анда", "Терра", "Эльба"};
 
     /**
-     *
      * @param number
      * @return
      */
@@ -26,7 +29,6 @@ public class GenerationMethods {
     }
 
     /**
-     *
      * @param enteredStr
      * @return
      */
@@ -37,7 +39,7 @@ public class GenerationMethods {
         }
         Random random = new Random();
         StringBuilder result = new StringBuilder();
-        int interval = ThreadLocalRandom.current().nextInt(0, 100);
+        int interval = ThreadLocalRandom.current().nextInt(1, 100);
         for (int i = 0; i <= getMeRandomNumber(interval); i++) {
             int number = random.nextInt(str.length());
             result.append(str.charAt(number));
@@ -54,16 +56,15 @@ public class GenerationMethods {
             return ALL_RUS_ALPHABET;
         } else if (chooseRusAndEngOrNumber.equalsIgnoreCase("eng")) {
             return ALL_ENG_ALPHABET;
-        } else if  (chooseRusAndEngOrNumber.equalsIgnoreCase("number")){
+        } else if (chooseRusAndEngOrNumber.equalsIgnoreCase("number")) {
             return NUMBER;
-        }else {
+        } else {
             return "";
         }
 
     }
 
     /**
-     *
      * @return
      */
     public static String getRandomStringRus() {
@@ -72,7 +73,6 @@ public class GenerationMethods {
     }
 
     /**
-     *
      * @return
      */
     public static String getRandomStringNoMatter() {
@@ -80,18 +80,143 @@ public class GenerationMethods {
     }
 
     /**
-     *
      * @return
      */
-    public static String getMeRandomName() {
+    public static String getRandomRusString() {
+        return getMeRandomString("rus");
+    }
+
+    /**
+     * @return
+     */
+    public static String getRandomEngString() {
+        return getMeRandomString("eng");
+    }
+
+    /**
+     * @return
+     */
+    public static String getMeRealRandomName() {
         return NAMES[getMeRandomNumber(NAMES.length)];
     }
 
     /**
-     *
      * @return
      */
-    public static String getMeRandomNickname() {
-        return NICKNAMES[getMeRandomNumber(NICKNAMES.length)];
+    public static String getMeRealRandomNick() {
+        return NICKS[getMeRandomNumber(NICKS.length)];
+    }
+
+    /**
+     * @return
+     */
+    public static String getMeRandomPassword() {
+        String foo = ALL_ENG_ALPHABET + NUMBER + ALL_RUS_ALPHABET;
+        int randomSizeOfPassword = ThreadLocalRandom.current().nextInt(5, 11);
+        StringBuilder result = new StringBuilder();
+        Random random = new Random();
+        for (int i = 0; i <= randomSizeOfPassword; i++) {
+            int number = random.nextInt(foo.length());
+            result.append(foo.charAt(number));
+        }
+        return result.toString();
+    }
+
+    /**
+     * @param myCollection
+     * @return
+     */
+    public static Collection<Person> addInCollectionPerson(Collection<Person> myCollection) {
+        long start = System.currentTimeMillis();
+        int fooCount = 0;
+        while (fooCount != 100) {
+            myCollection.add(new Person(GenerationMethods.getMeRealRandomNick(), GenerationMethods.getMeRandomPassword(), getMeRealRandomName()));
+            fooCount++;
+        }
+        long finish = System.currentTimeMillis();
+        System.out.println("Операция:  Заполнения коллекции " + myCollection.getClass() + ". Заняла " + (finish - start) + "мс");
+        return myCollection;
+    }
+
+    /**
+     * @param myCollection
+     * @return
+     */
+    public static Collection<Animal> addInCollectionAnimal(Collection<Animal> myCollection) {
+        long start = System.currentTimeMillis();
+        int fooCount = 0;
+        while (fooCount != 100) {
+            myCollection.add(new Animal(GenerationMethods.getRandomStringNoMatter(), Animal.getMeRandomAge()));
+            fooCount++;
+        }
+        long finish = System.currentTimeMillis();
+        System.out.println("Операция:  Заполнения коллекции " + myCollection.getClass() + ". Заняла " + (finish - start) + "мс");
+        return myCollection;
+    }
+
+    /**
+     * @param myCollection
+     * @param <T>
+     */
+    public static <T extends SomebodyWithNick> void timeIterationWithIterator(Collection<T> myCollection) {
+        long start = System.currentTimeMillis();
+        Iterator<T> iterator = myCollection.iterator();
+        while (iterator.hasNext()) {
+            iterator.next();
+        }
+        long finish = System.currentTimeMillis();
+        System.out.println("Операция:  Итерирования коллекции " + myCollection.getClass() + ". Заняла " + (finish - start) + "мс");
+
+    }
+
+    /**
+     * @param myCollection
+     * @param <T>
+     */
+    public static <T extends SomebodyWithNick> void timeIterationWithFor(Collection<T> myCollection) {
+        long start = System.currentTimeMillis();
+        long fooCount = 0;
+        for (int i = 0; i < myCollection.size(); i++) {
+            fooCount++;
+        }
+        long finish = System.currentTimeMillis();
+        System.out.println("Операция:  Итерирования коллекции " + myCollection.getClass() + ". Заняла " + (finish - start) + "мс");
+    }
+
+    /**
+     * @param myCollection
+     * @param <T>
+     */
+    public static <T extends SomebodyWithNick> void timeDeleteCollection(Collection<T> myCollection) {
+        long start = System.currentTimeMillis();
+        myCollection.clear();
+        long finish = System.currentTimeMillis();
+        System.out.println("Операция:  Итерирования коллекции " + myCollection.getClass() + ". Заняла " + (finish - start) + "мс");
+    }
+
+    /**
+     * @param myCollection
+     * @param <T>
+     * @return
+     */
+    // нужно доработать!!!!!
+    public static <T extends SomebodyWithNick> Collection<T> addInCollectionUniversal(Collection<T> myCollection) {
+        long start = System.currentTimeMillis();
+        Object o = new Object();
+        int fooCount = 0;
+        if (o instanceof Animal) {
+            while (fooCount != 100) {
+                myCollection.add((T) new Animal(GenerationMethods.getRandomStringNoMatter(), Animal.getMeRandomAge()));
+                fooCount++;
+            }
+        } else {
+            while (fooCount != 100) {
+                myCollection.add((T) new Person(GenerationMethods.getMeRealRandomNick(), GenerationMethods.getMeRandomPassword(), getMeRealRandomName()));
+                fooCount++;
+            }
+        }
+        long finish = System.currentTimeMillis();
+        System.out.println("Операция:  Заполнения коллекции " + myCollection.getClass() + ". Заняла " + (finish - start) + "мс");
+        return myCollection;
     }
 }

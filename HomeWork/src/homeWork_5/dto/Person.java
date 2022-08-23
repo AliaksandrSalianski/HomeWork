@@ -1,21 +1,19 @@
 package homeWork_5.dto;
 
-public class Person {
-    private final String nick;
-    private final int password;
+import homeWork_5.IDoIt;
+
+public class Person extends SomebodyWithNick implements Comparable<Person> {
+    private final String password;
     private final String name;
 
-    public Person(String nick, int password, String name) {
-        this.nick = nick;
+    public Person(String nick, String password, String name) {
+        super(nick);
         this.password = password;
         this.name = name;
     }
 
-    public String getNick() {
-        return nick;
-    }
 
-    public int getPassword() {
+    public String getPassword() {
         return password;
     }
 
@@ -23,7 +21,20 @@ public class Person {
         return name;
     }
 
-    private static void chekingPassworld(String  str){
 
+    @Override
+    public String toString() {
+        return "Person{" +
+                "nick='" + nick + '\'' +
+                ", password=" + password +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
+
+    @Override
+    public int compareTo(Person person) {
+        int personHash = person.hashCode();
+        return this.hashCode() - personHash;
     }
 }
