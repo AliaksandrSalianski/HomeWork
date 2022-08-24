@@ -13,21 +13,27 @@ import java.util.Set;
 
 public class SortMethods {
     /**
-     * @param animalList
+     * Метод сортирует List по возрасту
+     *
+     * @param animalList коллекция обьектов Person
      */
     public static void sortListCollectionOfAnimalByAge(List<Animal> animalList) {
         animalList.sort(new AnimalComparatorAge());
     }
 
     /**
-     * @param animalList
+     * Метод сортирует List по возрасту и нику
+     *
+     * @param animalList коллекция обьектов Person
      */
     public static void sortListOfAnimalByAgeAndNick(List<Animal> animalList) {
         animalList.sort(new AnimalComparatorAgeAndNick());
     }
 
     /**
-     * @param animalSet
+     * Метод сортирует Set по возрасту
+     *
+     * @param animalSet коллекция обьектов Person
      */
     public static void sortSetCollectionOfAnimalByAge(Set<Animal> animalSet) {
         List<Animal> sortedList = new ArrayList<>(animalSet);
@@ -36,7 +42,9 @@ public class SortMethods {
     }
 
     /**
-     * @param animalSet
+     * Метод сортирует Set по возрасту и нику
+     *
+     * @param animalSet коллекция обьектов Person
      */
     public static void sortSetCollectionOfAnimalByAgeAndNick(Set<Animal> animalSet) {
         List<Animal> sortedList = new ArrayList<>(animalSet);
@@ -45,21 +53,27 @@ public class SortMethods {
     }
 
     /**
-     * @param personList
+     * Метод сортирует List по длинне пароля
+     *
+     * @param personList коллекция обьектов Person
      */
     public static void sortListCollectionOfPersonByLengthPassword(List<Person> personList) {
         personList.sort(new PersonComparatorLengthPassword());
     }
 
     /**
-     * @param personList
+     * Метод сортирует List по длинне пароля и нику
+     *
+     * @param personList коллекция обьектов Person
      */
     public static void sortListCollectionOfPersonByLengthPasswordAndNick(List<Person> personList) {
         personList.sort(new PersonComporatorLenghtAndNick());
     }
 
     /**
-     * @param personList
+     * Метод сортирует Set по длинне пароля
+     *
+     * @param personList коллекция обьектов Person
      */
     public static void sortSetCollectionOfPersonByLengthPassword(Set<Person> personList) {
         List<Person> sortedList = new ArrayList<>(personList);
@@ -68,7 +82,9 @@ public class SortMethods {
     }
 
     /**
-     * @param personList
+     * Метод сортирует Set по длинне пароля и нику
+     *
+     * @param personList коллекция обьектов Person
      */
     public static void sortSetCollectionOfPersonByLengthPasswordAndNick(Set<Person> personList) {
         List<Person> sortedList = new ArrayList<>(personList);
