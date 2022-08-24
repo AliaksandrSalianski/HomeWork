@@ -5,7 +5,7 @@ import homeWork_5.dto.Animal;
 import java.util.Comparator;
 
 /**
- *
+ * класс для сравненияя по возрасту обьектов animal
  */
 public class AnimalComparatorAge implements Comparator<Animal> {
     @Override

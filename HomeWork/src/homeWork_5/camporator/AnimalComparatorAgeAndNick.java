@@ -4,6 +4,10 @@ import homeWork_5.dto.Animal;
 
 import java.util.Comparator;
 
+/**
+ * класс для сравненияя по возрасту и нику  обьектов animal
+ */
+
 public class AnimalComparatorAgeAndNick implements Comparator<Animal> {
     @Override
     public int compare(Animal animal, Animal animal2) {

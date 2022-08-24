@@ -1,16 +1,21 @@
 package homeWork_5.dto;
 
 /**
- *
+ * класс являтся наследником SomebodyWithNick
+ * имеет поля :
+ * password пароль
+ * name имя
  */
 public class Person extends SomebodyWithNick implements Comparable<Person> {
     private String password;
     private final String name;
 
     /**
-     * @param nick
-     * @param password
-     * @param name
+     * Конструктор
+     *
+     * @param nick     псевдоним пользователя
+     * @param password пароль
+     * @param name     имя
      */
     public Person(String nick, String password, String name) {
         super(nick);
@@ -19,7 +24,9 @@ public class Person extends SomebodyWithNick implements Comparable<Person> {
     }
 
     /**
-     * @param password
+     * метод проверяет правильность ввода пароля
+     *
+     * @param password возвращает проверенный пароль
      */
     private void setPassword(String password) {
         if (password.length() < 5 || password.length() > 10) {
@@ -30,7 +37,9 @@ public class Person extends SomebodyWithNick implements Comparable<Person> {
     }
 
     /**
-     * @return
+     * Геттер
+     *
+     * @return пароль
      */
     public String getPassword() {
         return password;
@@ -38,7 +47,9 @@ public class Person extends SomebodyWithNick implements Comparable<Person> {
 
 
     /**
-     * @return
+     * Переопределенный toString
+     *
+     * @return возвращает строку
      */
     @Override
     public String toString() {
@@ -49,6 +60,12 @@ public class Person extends SomebodyWithNick implements Comparable<Person> {
                 '}';
     }
 
+    /**
+     * переопределлленный метод для treeSet
+     *
+     * @param person обьект person
+     * @return возвращает разность между хеш кодами двух обьектов
+     */
     @Override
     public int compareTo(Person person) {
         return this.hashCode() - person.hashCode();

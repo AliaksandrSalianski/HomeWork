@@ -1,19 +1,29 @@
 package homeWork_5.dto;
 
-import homeWork_5.camporator.AnimalComparatorAge;
-import homeWork_5.camporator.AnimalComparatorAgeAndNick;
-
-import java.util.*;
-import java.util.concurrent.ThreadLocalRandom;
-
+/**
+ * класс являтся наследником SomebodyWithNick
+ * имеет поля :
+ * age возраст
+ */
 public class Animal extends SomebodyWithNick implements Comparable<Animal> {
     private int age;
 
+    /**
+     * Конструктор
+     *
+     * @param nick ник
+     * @param age  возраст
+     */
     public Animal(String nick, int age) {
         super(nick);
         setAge(age);
     }
 
+    /**
+     * Метод проверяет правильность ввода возраста
+     *
+     * @param age возраст
+     */
     private void setAge(int age) {
         if (age < 1 || age > 15) {
             throw new IllegalArgumentException("age can be < 1 and >15 ");
@@ -23,17 +33,29 @@ public class Animal extends SomebodyWithNick implements Comparable<Animal> {
 
     }
 
+    /**
+     * геттер
+     *
+     * @return возвращает возраст
+     */
     public int getAge() {
         return age;
     }
 
+    /**
+     * геттер
+     *
+     * @return возвращает ник
+     */
     public String getNick() {
         return nick;
     }
 
-
-
-
+    /**
+     * Переопределенный toString
+     *
+     * @return возвращает строку
+     */
     @Override
     public String toString() {
         return "Animal{" +
@@ -41,6 +63,12 @@ public class Animal extends SomebodyWithNick implements Comparable<Animal> {
                 super.toString();
     }
 
+    /**
+     * переопределлленный метод для treeSet
+     *
+     * @param animal обьект person
+     * @return возвращает разность между хеш кодами двух обьектов
+     */
     @Override
     public int compareTo(Animal animal) {
         return this.hashCode() - animal.hashCode();
