@@ -1,17 +1,26 @@
 package homeWork_5.dto;
 
-import homeWork_5.camporator.AnimalCamporatorAge;
+import homeWork_5.camporator.AnimalComparatorAge;
 import homeWork_5.camporator.AnimalComparatorAgeAndNick;
 
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Animal extends SomebodyWithNick implements Comparable<Animal> {
-    private final int age;
+    private int age;
 
     public Animal(String nick, int age) {
         super(nick);
-        this.age = age;
+        setAge(age);
+    }
+
+    private void setAge(int age) {
+        if (age < 1 || age > 15) {
+            throw new IllegalArgumentException("age can be < 1 and >15 ");
+        } else {
+            this.age = age;
+        }
+
     }
 
     public int getAge() {
@@ -22,26 +31,7 @@ public class Animal extends SomebodyWithNick implements Comparable<Animal> {
         return nick;
     }
 
-    /**
-     * @return
-     */
-    public static int getMeRandomAge() {
-        return ThreadLocalRandom.current().nextInt(1, 16);
-    }
 
-    /**
-     * @param animalList
-     */
-    public static void sortCollectionOfAnimalByAge(List<Animal> animalList) {
-        animalList.sort(new AnimalCamporatorAge());
-    }
-
-    /**
-     * @param animalList
-     */
-    public void sortCollectionOfAnimalByAgeAndNick(List<Animal> animalList) {
-        animalList.sort(new AnimalComparatorAgeAndNick());
-    }
 
 
     @Override
@@ -53,8 +43,7 @@ public class Animal extends SomebodyWithNick implements Comparable<Animal> {
 
     @Override
     public int compareTo(Animal animal) {
-        int personHash = animal.hashCode();
-        return this.hashCode() - personHash;
+        return this.hashCode() - animal.hashCode();
     }
 }
 

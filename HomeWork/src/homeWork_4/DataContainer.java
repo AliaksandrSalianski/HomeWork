@@ -112,8 +112,9 @@ public class DataContainer<T> {
     public boolean delete(int index) {
         if (index >= data.length || index < 0) {
             return false;
-        } else
+        } else {
             data[index] = null;
+        }
         narrowingArray(index);
         return true;
     }
@@ -128,11 +129,8 @@ public class DataContainer<T> {
         int index = findElement(item);
         if (index == -1 || item == null) {
             return false;
-        } else {
-            data[index] = null;
-            narrowingArray(index);
         }
-        return true;
+        return delete(index);
     }
 
     /**
@@ -188,7 +186,7 @@ public class DataContainer<T> {
     @Override
     public String toString() {
         return "{" +
-                 Arrays.toString(getArrayWithoutNull(data)) +
+                Arrays.toString(getArrayWithoutNull(data)) +
                 '}';
     }
 
@@ -249,6 +247,7 @@ public class DataContainer<T> {
                     container.getItems()[j] = foo;
                 }
             }
+            
         }
     }
 

@@ -26,7 +26,7 @@ public class Main {
         Integer two = 99;
         System.out.println("result delete operation element One is " + dataContainer.delete(one));
         System.out.println("result delete operation element Two is " + dataContainer.delete(two));
-        System.out.println(dataContainer);
+       // System.out.println(dataContainer.getItems().length);
         dataContainer.sort(dataContainerComparator);
         Integer[] arrayIntToTestSort = new Integer[]{10, 6, 5, 7, null, 1, 2, 3, 5, 4, 8, 9};
         String[] arrayStrToTestSort = new String[]{"C", "F", "E", "G","A", "K", "Y", "B", "D", "I", "X", "W", "M"};
