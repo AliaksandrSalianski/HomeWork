@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 
 public class Loop2 {
-    public static String printMultiplication() {
+    public  String printMultiplication() {
         String strResult = "";
         int number;
         int result = 1;

@@ -27,29 +27,5 @@ public class Loop1 {
         return str.toString();
     }
 
-    // /**
-    //  * Число положительное, максимум long:
-    //  * Перемножить числа от 1 до числа (включительно) введенного через аргумент к исполняемой программе.
-    //  * Используя рекурсию
-    //  */
-    // // not print =result
-    // public static long multiplyWithRecursion(int number) {
-    //     long result = 1;
-    //     if (number < 0) {
-    //         System.out.print("wrong input");
-    //     }
-    //     if (number < 1) {
-    //         return result;
-    //     }
-    //     result = number * multiplyWithRecursion(number - 1);
-    //     System.out.print(number + "*");
-    //     return result;
-    //
-    // }
-
-    public static void main(String[] args) {
-        Loop1 loop1 = new Loop1();
-        System.out.println(loop1.multiplyWithCycle(22));
-    }
 }
 
