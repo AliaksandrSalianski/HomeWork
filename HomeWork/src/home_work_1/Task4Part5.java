@@ -1,23 +1,15 @@
 package home_work_1;
 
-import java.util.Scanner;
-
+/**
+ * В классе реализована проверка по вводимому числу обозначающего код символа в таблицы ASCII является ли символ буквой англмйского алфавита
+ */
 public class Task4Part5 {
-    public static void defineEngChar() {
-        System.out.println("Enter integer number ");
-        Scanner scanner = new Scanner(System.in);
-        int enterNumber;
-        if (scanner.hasNextInt()) {
-            enterNumber = scanner.nextInt();
+
+    public String defineEngChar(int number) {
+        if ((number >= 65 && number <= 90) || (number >= 97 && number <= 122)) {
+            return "Yes";
         } else {
-            System.out.println("wrong,entered not a integer number ");
-            return;
+            return "No";
         }
-        if ((enterNumber >= 65 && enterNumber <= 90) || (enterNumber >= 97 && enterNumber <= 122)) {
-            System.out.print("Yes, this is the english code");
-        } else {
-            System.out.println("No,this is not english code");
-        }
-        scanner.close();
     }
 }

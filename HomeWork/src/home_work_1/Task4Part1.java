@@ -1,15 +1,17 @@
 package home_work_1;
 
-
+/**
+ * в классе реализован метод проверки четное число или нечетное. если число нечетное то возвращает ближайшее четное
+ */
 public class Task4Part1 {
-
-    public static void defineOddNumber() {
-        int random = (int) (1 + Math.random() * 100); //random number from 1 to 99
-        int numberTwo = random + 1;
-        if (random % 2 == 0) {
-            System.out.printf("Not Even number is %d\n", numberTwo);
+    public int checkHonest(int one) {
+        if (one == 0) {
+            return 2;
+        } else if (one % 2 == 0) {
+            return one;
         } else {
-            System.out.printf("Not Even number is %d\n", random);
+            return one + 1;
         }
     }
 }
+

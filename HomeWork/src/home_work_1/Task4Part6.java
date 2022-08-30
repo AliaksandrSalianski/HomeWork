@@ -1,20 +1,16 @@
 package home_work_1;
 
-import java.util.Scanner;
+/**
+ * в классе реализована проверка является ли год высокосным
+ */
 
 public class Task4Part6 {
-    public static void leapYear() {
-        Scanner scanner = new Scanner(System.in);
-        int enterYear;
-        if (scanner.hasNextInt()) {
-            enterYear = scanner.nextInt();
-            if ((enterYear % 4 == 0 && enterYear % 100 != 0) || (enterYear % 400 == 0)) {
-                System.out.println("the year is high");
-            } else {
-                System.out.println("year is not high");
-            }
+
+    public String leapYear(int enterYear) {
+        if ((enterYear % 4 == 0 && enterYear % 100 != 0) || (enterYear % 400 == 0)) {
+            return "YES";
         } else {
-            System.out.println("entered Not a number");
+            return "NO";
         }
     }
 }
