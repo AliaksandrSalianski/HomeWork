@@ -26,17 +26,9 @@ public class Loop2 {
             String multiplyOrEquals = i == charArray.length - 1 ? "=" + result : "*";
             strResult.append(charArray[i]).append(multiplyOrEquals);
         }
-
         return strResult.toString();
     }
 
-
-
-    public static void main(String[] args) {
-        Loop2 loop2 = new Loop2();
-        System.out.println(loop2.multiplication("12405"));
-
-    }
 }
 
 
