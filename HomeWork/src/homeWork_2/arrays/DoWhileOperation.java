@@ -41,7 +41,4 @@ public class DoWhileOperation implements IArrayOperation {
         System.out.println("");
     }
 
-    public static void main(String[] args) {
-        DoWhileOperation one = new DoWhileOperation();
-    }
 }
