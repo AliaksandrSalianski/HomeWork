@@ -16,8 +16,6 @@ public class SortUtils {
                 }
             }
         }
-        System.out.println(Arrays.toString(arr));
     }
-
 }
 
