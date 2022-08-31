@@ -29,7 +29,7 @@ class SortUtilsTest {
     }
 
     @Test
-    void bubble() {
+    void testBubble() {
         sortUtils.bubble(arrayFoo1);
         Assertions.assertArrayEquals(new int[]{1, 2, 3, 4, 5, 6}, arrayFoo1);
 
@@ -53,8 +53,6 @@ class SortUtilsTest {
 
         sortUtils.bubble(arrayFoo8);
         Assertions.assertArrayEquals(new int[]{0,0,1,1,1}, arrayFoo8);
-
-
 
     }
 }
