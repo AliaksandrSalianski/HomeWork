@@ -15,7 +15,7 @@ public class CalculatorWithMathCopy implements ICalculator {
      * @param twoNumber второй операнд
      * @return возврощает сумму параметров метода
      */
-    public double giveSumma(double oneNumber, double twoNumber) {
+    public double giveSumma(double oneNumber, double twoNumber)   {
         return twoNumber + oneNumber;
     }
 

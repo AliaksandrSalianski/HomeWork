@@ -1,8 +1,6 @@
 package homeWork_6.runner;
 
-import homeWork_6.util.FindTop_N_Words;
-import homeWork_6.util.LineFromFile;
-import homeWork_6.util.MakeSetOfWord;
+import homeWork_6.util.*;
 
 import java.util.Set;
 
@@ -13,10 +11,18 @@ public class Main {
 
         System.out.println("Задание 2.1");
         Set<String> setOfUsedWords = MakeSetOfWord.makingSet(bookToWork);
-        System.out.printf("В книге использовано : %d слов", setOfUsedWords.size());
+        System.out.printf("В книге использовано : %d слов\n", setOfUsedWords.size());
 
         System.out.println("Задание 2.2");
-        FindTop_N_Words.printTopWords();
+        FindTop_N_Words.printTopWords(MakeMap.makingMap(path), 10);
+
+        System.out.println("Задание 5");
+        EasySearch easySearch = new EasySearch();
+        System.out.printf("слово\t\"%s\"\t употребляется \t %d раз(a)  \n", "война", easySearch.search(bookToWork, "война"));
+        System.out.printf("слово\t\"%s\" \t употребляется \t %d раз(a)  \n", "и", easySearch.search(bookToWork, "и"));
+        System.out.printf("слово\t\"%s\" \t употребляется \t %d раз(a)  \n", "мир", easySearch.search(bookToWork, "мир"));
+
+
     }
 }
 
