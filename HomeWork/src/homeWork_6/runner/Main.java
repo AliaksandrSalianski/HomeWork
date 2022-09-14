@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
-        String path = "HomeWork/src/homeWork_6/book.txt";
+        String path = "Course/JD1/HomeWork/src/homeWork_6/book.txt";
         String bookToWork = LineFromFile.makingStringFromFile(path);
 
         System.out.println("Задание 2.1");
