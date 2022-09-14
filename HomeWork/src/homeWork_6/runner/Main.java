@@ -1,5 +1,6 @@
 package homeWork_6.runner;
 
+import homeWork_6.api.ISearchEngine;
 import homeWork_6.util.*;
 
 import java.util.Set;
@@ -17,7 +18,7 @@ public class Main {
         FindTop_N_Words.printTopWords(MakeMap.makingMap(path), 10);
 
         System.out.println("Задание 5");
-        EasySearch easySearch = new EasySearch();
+        ISearchEngine easySearch = new EasySearch();
         System.out.printf("слово\t\"%s\"\t употребляется \t %d раз(a)  \n", "война", easySearch.search(bookToWork, "война"));
         System.out.printf("слово\t\"%s\" \t употребляется \t %d раз(a)  \n", "и", easySearch.search(bookToWork, "и"));
         System.out.printf("слово\t\"%s\" \t употребляется \t %d раз(a)  \n", "мир", easySearch.search(bookToWork, "мир"));
