@@ -8,10 +8,13 @@ import homeWork_6.api.ISearchEngine;
 public class EasySearch implements ISearchEngine {
     /**
      * метод подсчитывет количество употребления слова в тексте
+     *
      * @param text текст в котором ищем
      * @param word слово
      * @return возвращает подсчитанное количество
      */
+
+
     @Override
     public long search(String text, String word) {
         String[] fooStrArray = MakeArrayOfWords.splitString(text);
@@ -23,4 +26,7 @@ public class EasySearch implements ISearchEngine {
         }
         return countResult;
     }
+
+
 }
+

@@ -12,6 +12,9 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
@@ -21,6 +24,7 @@ public class Two {
         final String resultFolderPath = "E:\\ideaProjectsAcademy\\Course\\JD1\\HomeWork\\src\\homeWork_6\\result.txt";
         final String libraryFolderPath = "E:\\ideaProjectsAcademy\\Course\\JD1\\HomeWork\\src\\homeWork_6\\library";//TODO переделатть на относительный
         Path foundedFile = null;
+        ExecutorService executorService = Executors.newFixedThreadPool(10);
 
         System.out.println("Введите папку");
         String enteredPathByUser = makeStringWithBuffer();
@@ -59,6 +63,7 @@ public class Two {
                 writeToFile(putToFolderResult, resultFolderPath);
             }
             System.out.println("exit");
+            executorService.shutdown();
         }
     }
 
@@ -119,6 +124,14 @@ public class Two {
             e.printStackTrace();
         }
         return line;
+    }
+    static class worker implements Callable <Integer> {
+        EasySearch easySearch = new EasySearch();
+
+        @Override
+        public Integer call() throws Exception {
+            return null;
+        }
     }
 }
 

@@ -50,7 +50,7 @@ public class One {
         while (true) {
             System.out.print("Введите \"слово_для_поиска\" или \"Esc \" для выхода из программы");
             String wordToFind = makeStringWithBuffer();
-            if (Objects.equals(wordToFind, "Esc")) {
+            if (Objects.equals(wordToFind, "Esc")) {//TODO возврат к списку файлов
                 break;
             } else {
                 EasySearch easySearch = new EasySearch();
