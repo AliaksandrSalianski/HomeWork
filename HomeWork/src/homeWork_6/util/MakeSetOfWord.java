@@ -1,8 +1,7 @@
 package homeWork_6.util;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
+
 
 /**
  * класс реализует помещение слов из строки в Set
