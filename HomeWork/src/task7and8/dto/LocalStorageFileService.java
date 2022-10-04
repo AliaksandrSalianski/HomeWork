@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
- *
+ * Класс реализует работу с текстовыми файлами на локальной системе
  */
 public class LocalStorageFileService implements ILocalFileService {
 
@@ -31,8 +31,9 @@ public class LocalStorageFileService implements ILocalFileService {
     }
 
     /**
+     * Метод создает новый файл
      *
-     * @return
+     * @return путь к файлу
      */
     @Override
     public String createNewFile() {
@@ -56,11 +57,11 @@ public class LocalStorageFileService implements ILocalFileService {
     }
 
     /**
-     *
-     * @param resultFolderPath
-     * @param file
-     * @param text
-     * @param wordToFind
+     * Метод ищет слово в текстовом документе и записывает результат поиска в файл
+     * @param resultFolderPath путь к папке в которую сохраняетяся результат поиска
+     * @param file файл в котором находится текстовы документ
+     * @param text текст в котором ищем слово
+     * @param wordToFind слово которое ищем
      */
 
     @Override
@@ -71,10 +72,9 @@ public class LocalStorageFileService implements ILocalFileService {
         writeToFile(putToFolderResult, resultFolderPath);
     }
 
-    /**
-     *
-     * @param foundedFile
-     * @return
+    /** Метод возвращает текст из текстового файла
+     * @param foundedFile  файл с текстом
+     * @return строку
      */
     @Override
     public String getText(Path foundedFile) {
@@ -87,10 +87,8 @@ public class LocalStorageFileService implements ILocalFileService {
         return new String(bytes, UTF_8);
     }
 
-    /**
-     *
-     * @param enteredPathByUser
-     * @return
+    /**Метод находит все txt файлы в папке которую ввел пользователь
+     * @param enteredPathByUser водимый путь пользователем
      */
     @Override
     public List<Path> getAllFiles(String enteredPathByUser) {
@@ -105,10 +103,9 @@ public class LocalStorageFileService implements ILocalFileService {
         return null;
     }
 
-    /**
-     *
-     * @param fooStr
-     * @param fooPath
+    /**метод записывает в файл
+     * @param fooStr строка которую нужно записать
+     * @param fooPath путь
      */
     @Override
     public void writeToFile(String fooStr, String fooPath) {
@@ -125,9 +122,8 @@ public class LocalStorageFileService implements ILocalFileService {
         }
     }
 
-    /**
-     *
-     * @return
+    /**Метод для работы с консолью пользователем
+     * @return возвращает строку которую ввел пользователь
      */
     @Override
     public String makeStringWithBuffer() {
@@ -141,11 +137,9 @@ public class LocalStorageFileService implements ILocalFileService {
         return line;
     }
 
-    /**
-     *
+    /**Метод ищет нужный файл в списке
      * @param filePaths          список файлов
      * @param selectedFileToWork файл который ищем
-     * @return
      */
     @Override
     public Path findFileInListPath(List<Path> filePaths, String selectedFileToWork) {
@@ -161,9 +155,8 @@ public class LocalStorageFileService implements ILocalFileService {
         return null;
     }
 
-    /**
-     *
-     * @param filePaths
+    /**Метод выводит имена txt файлов
+     * @param filePaths список файлов
      */
     @Override
     public void printAllTxtFileNameInFolder(List<Path> filePaths) {
@@ -172,16 +165,15 @@ public class LocalStorageFileService implements ILocalFileService {
         }
     }
 
-    /**
-     *
-     * @param pathFolderToSaveResult
-     * @param selectedFileToWork
-     * @param text
+    /**метод ищет слово в тексте и записывает результат в файл
+     * @param pathFolderToSaveResult путь до папки куда будет сохранен результат
+     * @param selectedFileToWork файл в котором нужно искать
+     * @param text текст в котором ищем
      */
     public void workWitExecuteService(String pathFolderToSaveResult, String selectedFileToWork, String text) {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         while (true) {
-            System.out.println("Введите \"слово_для_поиска\" или \"Esc\" для выхода из программы");
+            System.out.println("Введите \"слово_для_поиска\" или \"Esc\" для выхода");
             String wordToFind = makeStringWithBuffer();
             if (Objects.equals(wordToFind, "Esc")) {
                 break;
