@@ -22,6 +22,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  */
 public class MainTask8 {
     public static void main(String[] args) {
+        // Course\JD1\HomeWork\src\homeWork_6\library
         String fileSeparator = System.getProperty("file.separator");
         System.out.println("fileSeparator в текущей системе" + fileSeparator);
         final String resultFolderPath = "Course" + fileSeparator + "JD1" + fileSeparator + "HomeWork" + fileSeparator + "src" + fileSeparator + "homeWork_6" + fileSeparator + "result.txt";
@@ -29,7 +30,7 @@ public class MainTask8 {
         Path foundedFile = null;
         System.out.println("Введите адрес папки");
         String enteredPathByUser = makeStringWithBuffer();
-        List<Path> filePaths ;
+        List<Path> filePaths;
         filePaths = getAllFiles(enteredPathByUser);
         System.out.println("Все \"txt\" файлы в выбранной папке:");
         assert filePaths != null;
@@ -62,7 +63,8 @@ public class MainTask8 {
             if (Objects.equals(wordToFind, "Esc")) {
                 break;
             } else {
-                executorService.submit(Objects.requireNonNull(findWithISearchEngineAndPutInFolder(pathFolderToSaveResult, selectedFileToWork, text, wordToFind)));
+                String finalPathFolderToSaveResult = pathFolderToSaveResult;
+                executorService.execute(() -> findWithISearchEngineAndPutInFolder(finalPathFolderToSaveResult, selectedFileToWork, text, wordToFind));
             }
         }
         executorService.shutdown();
@@ -103,12 +105,11 @@ public class MainTask8 {
      * @param text             текст в которм осуществляется поиск
      * @param wordToFind       слово которое нужно найти
      */
-    private static Runnable findWithISearchEngineAndPutInFolder(String resultFolderPath, String file, String text, String wordToFind) {
+    private static void findWithISearchEngineAndPutInFolder(String resultFolderPath, String file, String text, String wordToFind) {
         ISearchEngine easySearch = new EasySearch();
         long countOfWord = easySearch.search(text, wordToFind);
         String putToFolderResult = file + "-" + wordToFind + "-" + countOfWord + System.lineSeparator();
         writeToFile(putToFolderResult, resultFolderPath);
-        return null;
     }
 
     /**
@@ -129,6 +130,7 @@ public class MainTask8 {
 
     /**
      * метод находит все файлы с расширением "txt" в папке
+     *
      * @param enteredPathByUser путь до папки с файлами
      */
     private static List<Path> getAllFiles(String enteredPathByUser) {
@@ -139,12 +141,13 @@ public class MainTask8 {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+        return null;//TODO переделать чтобы не было доп.проверки на null при вызове
     }
 
     /**
      * метод записывает в файл
-     * @param fooStr строка
+     *
+     * @param fooStr  строка
      * @param fooPath путь до файла
      */
     private static void writeToFile(String fooStr, String fooPath) {
@@ -164,6 +167,7 @@ public class MainTask8 {
 
     /**
      * метод работы с консолью для ввода пользователем
+     *
      * @return строку
      */
     private static String makeStringWithBuffer() {
