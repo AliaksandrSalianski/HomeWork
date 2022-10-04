@@ -1,4 +1,4 @@
-package starterTask7and8;
+package task7and8;
 
 import homeWork_6.api.ISearchEngine;
 import homeWork_6.util.EasySearch;
@@ -64,7 +64,7 @@ public class MainTask8 {
                 break;
             } else {
                 String finalPathFolderToSaveResult = pathFolderToSaveResult;
-                executorService.execute(() -> findWithISearchEngineAndPutInFolder(finalPathFolderToSaveResult, selectedFileToWork, text, wordToFind));
+                executorService.execute(() -> findWithISearchEngineAndPutResultInFolder(finalPathFolderToSaveResult, selectedFileToWork, text, wordToFind));
             }
         }
         executorService.shutdown();
@@ -105,7 +105,7 @@ public class MainTask8 {
      * @param text             текст в которм осуществляется поиск
      * @param wordToFind       слово которое нужно найти
      */
-    private static void findWithISearchEngineAndPutInFolder(String resultFolderPath, String file, String text, String wordToFind) {
+    private static void findWithISearchEngineAndPutResultInFolder(String resultFolderPath, String file, String text, String wordToFind) {
         ISearchEngine easySearch = new EasySearch();
         long countOfWord = easySearch.search(text, wordToFind);
         String putToFolderResult = file + "-" + wordToFind + "-" + countOfWord + System.lineSeparator();
@@ -180,6 +180,4 @@ public class MainTask8 {
         }
         return line;
     }
-
-
 }
