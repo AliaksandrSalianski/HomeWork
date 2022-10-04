@@ -18,31 +18,25 @@ import java.util.stream.Collectors;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
- *
+ * Класс реализует работу с текстовыми файлами находящиеся в папке которую указал пользователь. В текстовом файле  ищется количество употребления вводимого  слова и результат
+ * поиска сохраняется в папку указанную пользователем
  */
 public class MainTask7 {
     public static void main(String[] args) {
         final String resultFolderPath = "Course\\JD1\\HomeWork\\src\\homeWork_6\\result.txt";
         final String libraryFolderPath = "Course\\JD1\\HomeWork\\src\\homeWork_6\\library";
-
         Path foundedFile = null;
-
         System.out.println("Введите папку");
         String enteredPathByUser = makeStringWithBuffer();
-
         if (!Objects.equals(enteredPathByUser, libraryFolderPath)) {
             System.out.println("Папки не существует");
             return;
         } else {
             System.out.println("Все файлы в выбранной папке: ");
         }
-
         List<Path> filePaths = getPaths(enteredPathByUser);
-
         System.out.println("Введите нужный  файл");
-
         String file = makeStringWithBuffer();
-
         for (Path filePath : filePaths) {
             if (filePath.getFileName().toString().equals(file)) {
                 foundedFile = filePath;
@@ -54,9 +48,7 @@ public class MainTask7 {
             return;
         }
         System.out.println("Файл найден");
-
         String text = getText(foundedFile);
-
         while (true) {
             System.out.println("Введите \"Слово_для_поиска\" или \"Esc\" для выхода из программы");
             String wordToFind = makeStringWithBuffer();
@@ -71,10 +63,12 @@ public class MainTask7 {
 
 
     /**
-     * @param resultFolderPath
-     * @param file
-     * @param text
-     * @param wordToFind
+     * Метод ищет количество нахождения слова в тексте и записывает в файл result.txt
+     *
+     * @param resultFolderPath путь до result.txt
+     * @param file             файл в котором находился файл
+     * @param text             текс котором производился поиск
+     * @param wordToFind       слово которое искали
      */
     private static void findWithISearchEngineAndPutInFolder(String resultFolderPath, String file, String text, String
             wordToFind) {
@@ -86,8 +80,8 @@ public class MainTask7 {
 
 
     /**
-     * @param enteredPathByUser
-     * @return
+     * @param enteredPathByUser путь до файла введенный пользователем
+     * @return возвращает все файлы
      */
     private static List<Path> getPaths(String enteredPathByUser) {
         List<Path> filePaths;
@@ -98,9 +92,12 @@ public class MainTask7 {
     }
 
     /**
-     * @param foundedFile
-     * @return
+     * Метод возвращает текст из файла
+     *
+     * @param foundedFile путь до файла
+     * @return текст полученный из файла
      */
+
     private static String getText(Path foundedFile) {
         byte[] bytes = new byte[0];
         try {
@@ -112,8 +109,9 @@ public class MainTask7 {
     }
 
     /**
-     * @param enteredPathByUser
-     * @return
+     * метод находит все файлы с расширением "txt" в папке
+     *
+     * @param enteredPathByUser путь до папки с файлами
      */
     private static List<Path> getAllFiles(String enteredPathByUser) {
         try {
@@ -127,8 +125,10 @@ public class MainTask7 {
     }
 
     /**
-     * @param fooStr
-     * @param fooPath
+     * метод записывает в файл
+     *
+     * @param fooStr  строка
+     * @param fooPath путь до файла
      */
 
     private static void writeToFile(String fooStr, String fooPath) {
@@ -147,7 +147,8 @@ public class MainTask7 {
     }
 
     /**
-     * @return
+     * метод работы с консолью для ввода пользователем
+     * @return строку
      */
     private static String makeStringWithBuffer() {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));

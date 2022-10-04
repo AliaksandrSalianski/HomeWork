@@ -8,7 +8,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.util.*;
+import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
@@ -16,7 +17,8 @@ import java.util.stream.Collectors;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
- *
+ * Класс реализует работу с текстовыми файлами находящиеся в папке которую указал пользователь. В текстовом файле  ищется количество употребления вводимого  слова и результат
+ * поиска сохраняется в папку указанную пользователем
  */
 public class MainTask8 {
     public static void main(String[] args) {
@@ -27,7 +29,7 @@ public class MainTask8 {
         Path foundedFile = null;
         System.out.println("Введите адрес папки");
         String enteredPathByUser = makeStringWithBuffer();
-        List<Path> filePaths = null;
+        List<Path> filePaths ;
         filePaths = getAllFiles(enteredPathByUser);
         System.out.println("Все \"txt\" файлы в выбранной папке:");
         assert filePaths != null;
@@ -60,7 +62,7 @@ public class MainTask8 {
             if (Objects.equals(wordToFind, "Esc")) {
                 break;
             } else {
-                findWithISearchEngineAndPutInFolder(pathFolderToSaveResult, selectedFileToWork, text, wordToFind);
+                executorService.submit(Objects.requireNonNull(findWithISearchEngineAndPutInFolder(pathFolderToSaveResult, selectedFileToWork, text, wordToFind)));
             }
         }
         executorService.shutdown();
@@ -68,7 +70,10 @@ public class MainTask8 {
     }
 
     /**
-     * @return
+     * метод создает новый файл в корневой дирректории проекта. Если такой файл реализована возможность перезаписи или
+     * создания нового
+     *
+     * @return путь до файла
      */
     private static String createNewFile() {
         File file;
@@ -91,11 +96,12 @@ public class MainTask8 {
     }
 
     /**
-     * @param resultFolderPath
-     * @param file
-     * @param text
-     * @param wordToFind
-     * @return
+     * Метод ищет слово в тексте и записывает результат поиска в файл
+     *
+     * @param resultFolderPath путь до файла в который сохроняется результат
+     * @param file             файл в котором осуществляется поиск
+     * @param text             текст в которм осуществляется поиск
+     * @param wordToFind       слово которое нужно найти
      */
     private static Runnable findWithISearchEngineAndPutInFolder(String resultFolderPath, String file, String text, String wordToFind) {
         ISearchEngine easySearch = new EasySearch();
@@ -106,8 +112,10 @@ public class MainTask8 {
     }
 
     /**
-     * @param foundedFile
-     * @return
+     * Метод возвращает текст из файла
+     *
+     * @param foundedFile путь до файла
+     * @return текст полученный из файла
      */
     private static String getText(Path foundedFile) {
         byte[] bytes = new byte[0];
@@ -120,8 +128,8 @@ public class MainTask8 {
     }
 
     /**
-     * @param enteredPathByUser
-     * @return
+     * метод находит все файлы с расширением "txt" в папке
+     * @param enteredPathByUser путь до папки с файлами
      */
     private static List<Path> getAllFiles(String enteredPathByUser) {
         try {
@@ -135,8 +143,9 @@ public class MainTask8 {
     }
 
     /**
-     * @param fooStr
-     * @param fooPath
+     * метод записывает в файл
+     * @param fooStr строка
+     * @param fooPath путь до файла
      */
     private static void writeToFile(String fooStr, String fooPath) {
         Path p = Paths.get(fooPath);
@@ -154,7 +163,8 @@ public class MainTask8 {
     }
 
     /**
-     * @return
+     * метод работы с консолью для ввода пользователем
+     * @return строку
      */
     private static String makeStringWithBuffer() {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
