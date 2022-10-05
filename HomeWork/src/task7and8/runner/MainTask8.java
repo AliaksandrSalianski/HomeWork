@@ -10,7 +10,7 @@ import java.util.List;
  * Класс реализует работу с текстовыми файлами находящиеся в папке которую указал пользователь. В текстовом файле  производится поиск  вводимого  слова и результат
  * сохраняется в папку указанную пользователем
  */
-public class MainTask8Version2 {
+public class MainTask8 {
     public static void main(String[] args) {
         // Course\JD1\HomeWork\src\homeWork_6\library
         ILocalFileService worker = new LocalStorageFileService();

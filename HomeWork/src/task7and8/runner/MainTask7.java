@@ -11,7 +11,7 @@ import java.util.Objects;
  * Класс реализует работу с текстовыми файлами находящиеся в папке которую указал пользователь. В текстовом файле  ищется количество употребления вводимого  слова и результат
  * поиска сохраняется в папку указанную пользователем
  */
-public class MainTask7Version2 {
+public class MainTask7 {
     public static void main(String[] args) {
         ILocalFileService worker = new LocalStorageFileService();
         System.out.println("Введите адрес папки");

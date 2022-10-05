@@ -25,7 +25,11 @@ public class LocalStorageFileService implements ILocalFileService {
     private final String fileSeparator = System.getProperty("file.separator");
     private final String resultFolderPath = "Course" + fileSeparator + "JD1" + fileSeparator + "HomeWork" + fileSeparator + "src" + fileSeparator + "homeWork_6" + fileSeparator + "result.txt";
 
-
+    /**
+     * геттер
+     *
+     * @return дефолтный путь для сохранения результа
+     */
     public String getResultFolderPath() {
         return resultFolderPath;
     }
@@ -218,6 +222,7 @@ public class LocalStorageFileService implements ILocalFileService {
         }
         executorService.shutdown();
     }
+
 }
 
 
