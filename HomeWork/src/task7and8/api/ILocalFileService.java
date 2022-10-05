@@ -7,6 +7,7 @@ import java.util.List;
  * Интерфейс поиска слов в текстовом файле в локальной системе и сохранения результатов в файл
  */
 public interface ILocalFileService {
+    void checkResultFileExistOrNot(String pathToResultFile);
 
     Path findFileInListPath(List<Path> filePaths, String selectedFileToWork);
 

@@ -42,7 +42,7 @@ public class LocalStorageFileService implements ILocalFileService {
         file = new File(makeStringWithBuffer());
         try {
             if (file.createNewFile()) {
-                System.out.println(file.getName() + "файл создан в корневой директории проекта");
+                System.out.println(file.getName() + " файл создан в корневой директории проекта");
             } else {
                 System.out.println(" файл уже существует в корневой директории проекта");
                 System.out.println("Перезаписать?");
@@ -58,10 +58,11 @@ public class LocalStorageFileService implements ILocalFileService {
 
     /**
      * Метод ищет слово в текстовом документе и записывает результат поиска в файл
+     *
      * @param resultFolderPath путь к папке в которую сохраняетяся результат поиска
-     * @param file файл в котором находится текстовы документ
-     * @param text текст в котором ищем слово
-     * @param wordToFind слово которое ищем
+     * @param file             файл в котором находится текстовы документ
+     * @param text             текст в котором ищем слово
+     * @param wordToFind       слово которое ищем
      */
 
     @Override
@@ -72,8 +73,10 @@ public class LocalStorageFileService implements ILocalFileService {
         writeToFile(putToFolderResult, resultFolderPath);
     }
 
-    /** Метод возвращает текст из текстового файла
-     * @param foundedFile  файл с текстом
+    /**
+     * Метод возвращает текст из текстового файла
+     *
+     * @param foundedFile файл с текстом
      * @return строку
      */
     @Override
@@ -87,7 +90,9 @@ public class LocalStorageFileService implements ILocalFileService {
         return new String(bytes, UTF_8);
     }
 
-    /**Метод находит все txt файлы в папке которую ввел пользователь
+    /**
+     * Метод находит все txt файлы в папке которую ввел пользователь
+     *
      * @param enteredPathByUser водимый путь пользователем
      */
     @Override
@@ -103,8 +108,10 @@ public class LocalStorageFileService implements ILocalFileService {
         return null;
     }
 
-    /**метод записывает в файл
-     * @param fooStr строка которую нужно записать
+    /**
+     * метод записывает в файл
+     *
+     * @param fooStr  строка которую нужно записать
      * @param fooPath путь
      */
     @Override
@@ -122,7 +129,9 @@ public class LocalStorageFileService implements ILocalFileService {
         }
     }
 
-    /**Метод для работы с консолью пользователем
+    /**
+     * Метод для работы с консолью пользователем
+     *
      * @return возвращает строку которую ввел пользователь
      */
     @Override
@@ -137,7 +146,29 @@ public class LocalStorageFileService implements ILocalFileService {
         return line;
     }
 
-    /**Метод ищет нужный файл в списке
+    /**
+     * Метод проверяет наличие файла по пути , создает новый  если файла нет
+     *
+     * @param pathToResultFile путь к файлу
+     */
+    @Override
+    public void checkResultFileExistOrNot(String pathToResultFile) {
+        try {
+            File f = new File(pathToResultFile);
+            if (f.createNewFile())
+                System.out.println("Создали файл ");
+            else {
+                System.out.println("Файл уже сущесьвует");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
+     * Метод ищет нужный файл в списке
+     *
      * @param filePaths          список файлов
      * @param selectedFileToWork файл который ищем
      */
@@ -152,10 +183,12 @@ public class LocalStorageFileService implements ILocalFileService {
         if (foundedFile == null) {
             System.out.println("Файл не найден");
         }
-        return null;
+        return foundedFile;
     }
 
-    /**Метод выводит имена txt файлов
+    /**
+     * Метод выводит имена txt файлов
+     *
      * @param filePaths список файлов
      */
     @Override
@@ -165,10 +198,12 @@ public class LocalStorageFileService implements ILocalFileService {
         }
     }
 
-    /**метод ищет слово в тексте и записывает результат в файл
+    /**
+     * метод ищет слово в тексте и записывает результат в файл
+     *
      * @param pathFolderToSaveResult путь до папки куда будет сохранен результат
-     * @param selectedFileToWork файл в котором нужно искать
-     * @param text текст в котором ищем
+     * @param selectedFileToWork     файл в котором нужно искать
+     * @param text                   текст в котором ищем
      */
     public void workWitExecuteService(String pathFolderToSaveResult, String selectedFileToWork, String text) {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
@@ -184,3 +219,5 @@ public class LocalStorageFileService implements ILocalFileService {
         executorService.shutdown();
     }
 }
+
+

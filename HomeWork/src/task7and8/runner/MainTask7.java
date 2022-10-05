@@ -1,4 +1,4 @@
-package task7and8;
+package task7and8.runner;
 
 import homeWork_6.api.ISearchEngine;
 import homeWork_6.util.EasySearch;
