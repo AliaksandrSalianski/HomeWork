@@ -1,4 +1,4 @@
-package task7and8;
+package task7and8.runner;
 
 import task7and8.api.ILocalFileService;
 import task7and8.dto.LocalStorageFileService;
@@ -12,6 +12,7 @@ import java.util.List;
  */
 public class MainTask8Version2 {
     public static void main(String[] args) {
+        //Course\JD1\HomeWork\src\homeWork_6\library
         ILocalFileService worker = new LocalStorageFileService();
         System.out.println("Введите адрес папки");
         String enteredPathByUser = worker.makeStringWithBuffer();
@@ -31,6 +32,7 @@ public class MainTask8Version2 {
         if (yesOrNotChoice.equalsIgnoreCase("yes")) {
             pathFolderToSaveResult = worker.createNewFile();
         } else {
+            worker.checkResultFileExistOrNot(worker.getResultFolderPath());
             System.out.println("Ok, сохранение в файл по адресу : " + worker.getResultFolderPath());
         }
         worker.workWitExecuteService(pathFolderToSaveResult, selectedFileToWork, text);
